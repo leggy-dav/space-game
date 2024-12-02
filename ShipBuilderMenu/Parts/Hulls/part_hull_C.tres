@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://bttqlrsfdd0vi"]
+
+[ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_ar4nr"]
+[ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="1_god77"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iece5"]
+atlas = ExtResource("1_ar4nr")
+region = Rect2(0, 128, 64, 64)
+
+[resource]
+script = ExtResource("1_god77")
+name = "Alien Hull"
+description = "Ship hull desinged after an alien space ship."
+part_types = 0
+icon = SubResource("AtlasTexture_iece5")
+cost = 10000.0

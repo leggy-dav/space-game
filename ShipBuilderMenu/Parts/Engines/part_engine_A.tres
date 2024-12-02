@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://bmswbwbl4sy5c"]
+
+[ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_2cgt4"]
+[ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="1_u72i3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mva2y"]
+atlas = ExtResource("1_2cgt4")
+region = Rect2(192, 64, 64, 64)
+
+[resource]
+script = ExtResource("1_u72i3")
+name = "Eddie Drive Mk 2"
+description = "Most common ship engine in the galexy."
+part_types = 1
+icon = SubResource("AtlasTexture_mva2y")
+cost = 400.0

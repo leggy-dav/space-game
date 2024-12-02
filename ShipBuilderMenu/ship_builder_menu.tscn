@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://b024mkpi7ca5x"]
+
+[ext_resource type="Texture2D" uid="uid://blgjrtv2yxmca" path="res://Images/Background_Grid_00.png" id="1_38p7r"]
+[ext_resource type="Script" path="res://ShipBuilderMenu/ship_builder_menu.gd" id="1_u0eiv"]
+[ext_resource type="PackedScene" uid="uid://dcr43wwjbl277" path="res://ShipBuilderMenu/parts_menu.tscn" id="2_wils6"]
+
+[node name="ship_builder_menu" type="Node2D"]
+script = ExtResource("1_u0eiv")
+
+[node name="ShipBuilderManager" type="Node" parent="."]
+
+[node name="Backgound_Texture" type="TextureRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 646.0
+texture = ExtResource("1_38p7r")
+
+[node name="Parts_Menu" parent="." instance=ExtResource("2_wils6")]
+offset_left = 1.0
+offset_top = 74.0
+offset_right = 41.0
+offset_bottom = 114.0
+
+[node name="Menu_Header" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 64.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu_Header"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu_Header/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(380, 64)
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="BackButton" type="Button" parent="Menu_Header/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
+
+[node name="NameMarginContainer" type="MarginContainer" parent="Menu_Header/HBoxContainer"]
+custom_minimum_size = Vector2(380, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextEdit" type="TextEdit" parent="Menu_Header/HBoxContainer/NameMarginContainer"]
+layout_mode = 2
+text = "Ship Name	"
+
+[node name="FundsMarginContainer" type="MarginContainer" parent="Menu_Header/HBoxContainer"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="FundsLabel" type="Label" parent="Menu_Header/HBoxContainer/FundsMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "$10,000"

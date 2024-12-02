@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcr43wwjbl277"]
+
+[ext_resource type="Script" path="res://ShipBuilderMenu/parts_menu.gd" id="1_66jqt"]
+[ext_resource type="Resource" uid="uid://bbmyhthl3l2tk" path="res://ShipBuilderMenu/ship_parts_hulls.tres" id="2_r4mvo"]
+
+[node name="Parts_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_66jqt")
+current_parts_group = ExtResource("2_r4mvo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HullsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hulls
+"
+
+[node name="EnginesButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Engines
+"
+
+[node name="UtilityButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Utilities
+"
+
+[node name="WeaponsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Weapons
+"
+
+[node name="PartsDisplay" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(172, 574)
+layout_mode = 0
+offset_left = 84.0
+offset_right = 256.0
+offset_bottom = 480.0
+
+[node name="GridContainer" type="GridContainer" parent="PartsDisplay"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2

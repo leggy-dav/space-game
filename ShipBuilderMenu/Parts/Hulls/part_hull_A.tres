@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://bjkfr7fbprs2p"]
+
+[ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_crl5w"]
+[ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="1_t2law"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d72x1"]
+atlas = ExtResource("1_crl5w")
+region = Rect2(0, 0, 64, 64)
+
+[resource]
+script = ExtResource("1_t2law")
+name = "Mark 0"
+description = "Simple ship hull with ballanced weight and hull integrity."
+part_types = 0
+icon = SubResource("AtlasTexture_d72x1")
+cost = 1000.0

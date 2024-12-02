@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://rvhpenrlsd48"]
+
+[ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="1_nnqyb"]
+[ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_nsxg2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxckp"]
+atlas = ExtResource("1_nsxg2")
+region = Rect2(0, 64, 64, 64)
+
+[resource]
+script = ExtResource("1_nnqyb")
+name = "Interprising"
+description = "Rounded Hull, something out of science fiction."
+part_types = 0
+icon = SubResource("AtlasTexture_fxckp")
+cost = 2000.0

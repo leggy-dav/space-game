@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b024mkpi7ca5x"]
+
+[ext_resource type="Texture2D" uid="uid://blgjrtv2yxmca" path="res://Images/Background_Grid_00.png" id="1_38p7r"]
+[ext_resource type="PackedScene" uid="uid://dcr43wwjbl277" path="res://ShipBuilderMenu/Parts/parts_menu.tscn" id="2_wils6"]
+
+[node name="ship_builder_menu" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 646.0
+texture = ExtResource("1_38p7r")
+
+[node name="Parts_Menu" parent="TextureRect" instance=ExtResource("2_wils6")]
+offset_left = 1.0
+offset_top = 74.0
+offset_right = 41.0
+offset_bottom = 114.0
