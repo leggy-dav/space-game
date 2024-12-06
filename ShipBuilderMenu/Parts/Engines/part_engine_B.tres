@@ -12,5 +12,5 @@ script = ExtResource("1_in7hy")
 name = "GravBar IX"
 description = "GrabVar IX is the fourth engine desinged by the Max Moe's Galactic Trucker Corporation. MMGTC claims the engine warps space around you to propel a star ship."
 part_types = 1
-icon = SubResource("AtlasTexture_ulr8g")
 cost = 1500.0
+icon = SubResource("AtlasTexture_ulr8g")

@@ -12,5 +12,5 @@ script = ExtResource("1_u0kbv")
 name = "Ballistic Turret"
 description = "Turret which fires ballistic projectils."
 part_types = 3
-icon = SubResource("AtlasTexture_xstgv")
 cost = 1200.0
+icon = SubResource("AtlasTexture_xstgv")

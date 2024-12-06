@@ -12,5 +12,5 @@ script = ExtResource("1_fiqfe")
 name = "Mag Shield A"
 description = "Basic shield used by most star ships."
 part_types = 4
-icon = SubResource("AtlasTexture_jkr1j")
 cost = 500.0
+icon = SubResource("AtlasTexture_jkr1j")

@@ -12,5 +12,5 @@ script = ExtResource("2_frbw3")
 name = "Ballistic Spread"
 description = "Spread shot cannon which fires off a volley of balistic projectiles"
 part_types = 3
-icon = SubResource("AtlasTexture_nkoec")
 cost = 700.0
+icon = SubResource("AtlasTexture_nkoec")

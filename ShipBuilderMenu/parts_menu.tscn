@@ -46,7 +46,7 @@ text = "Weapons
 
 [node name="SheildsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Sheilds"
+text = "Shields"
 
 [node name="PartsDisplay" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(172, 574)

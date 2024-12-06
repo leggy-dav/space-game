@@ -12,5 +12,5 @@ script = ExtResource("1_god77")
 name = "Alien Hull"
 description = "Ship hull desinged after an alien space ship."
 part_types = 0
-icon = SubResource("AtlasTexture_iece5")
 cost = 10000.0
+icon = SubResource("AtlasTexture_iece5")

@@ -12,5 +12,5 @@ script = ExtResource("1_ibehi")
 name = "Link Type A"
 description = "Utility component used to extend ship size and acts as anchors to other ship parts."
 part_types = 2
-icon = SubResource("AtlasTexture_u0mhw")
 cost = 100.0
+icon = SubResource("AtlasTexture_u0mhw")

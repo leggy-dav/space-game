@@ -12,5 +12,5 @@ script = ExtResource("1_nnqyb")
 name = "Interprising"
 description = "Rounded Hull, something out of science fiction."
 part_types = 0
-icon = SubResource("AtlasTexture_fxckp")
 cost = 2000.0
+icon = SubResource("AtlasTexture_fxckp")

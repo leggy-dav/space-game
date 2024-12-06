@@ -12,5 +12,5 @@ script = ExtResource("1_xg7l8")
 name = "Ballistic Cannon"
 description = "Basic ballistic cannon which fires projectiles."
 part_types = 3
-icon = SubResource("AtlasTexture_6rqh8")
 cost = 500.0
+icon = SubResource("AtlasTexture_6rqh8")

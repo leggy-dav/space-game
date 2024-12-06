@@ -12,5 +12,5 @@ script = ExtResource("1_u72i3")
 name = "Eddie Drive Mk 2"
 description = "Most common ship engine in the galexy."
 part_types = 1
-icon = SubResource("AtlasTexture_mva2y")
 cost = 400.0
+icon = SubResource("AtlasTexture_mva2y")

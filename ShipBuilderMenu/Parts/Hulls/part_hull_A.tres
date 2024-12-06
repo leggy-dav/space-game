@@ -12,5 +12,5 @@ script = ExtResource("1_t2law")
 name = "Mark 0"
 description = "Simple ship hull with ballanced weight and hull integrity."
 part_types = 0
-icon = SubResource("AtlasTexture_d72x1")
 cost = 1000.0
+icon = SubResource("AtlasTexture_d72x1")

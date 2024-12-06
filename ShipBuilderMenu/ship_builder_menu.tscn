@@ -73,3 +73,6 @@ theme_override_constants/margin_bottom = 4
 layout_mode = 2
 size_flags_horizontal = 8
 text = "$10,000"
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(576, 324)
