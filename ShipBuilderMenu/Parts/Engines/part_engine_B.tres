@@ -1,16 +1,22 @@
-[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://bh1h7gqtu6nqr"]
+[gd_resource type="Resource" script_class="PartData" load_steps=6 format=3 uid="uid://bh1h7gqtu6nqr"]
 
-[ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="1_in7hy"]
-[ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_vm0u6"]
+[ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_3v2e1"]
+[ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="2_eyum7"]
+[ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="2_uvu6v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ulr8g"]
-atlas = ExtResource("1_vm0u6")
+atlas = ExtResource("1_3v2e1")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xw7v"]
+atlas = ExtResource("2_eyum7")
 region = Rect2(192, 128, 64, 64)
 
 [resource]
-script = ExtResource("1_in7hy")
+script = ExtResource("2_uvu6v")
 name = "GravBar IX"
 description = "GrabVar IX is the fourth engine desinged by the Max Moe's Galactic Trucker Corporation. MMGTC claims the engine warps space around you to propel a star ship."
-part_types = 1
+part_type = 1
 cost = 1500.0
 icon = SubResource("AtlasTexture_ulr8g")
+texture = SubResource("AtlasTexture_5xw7v")

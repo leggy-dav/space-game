@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b024mkpi7ca5x"]
+[gd_scene load_steps=4 format=3 uid="uid://b024mkpi7ca5x"]
 
 [ext_resource type="Texture2D" uid="uid://blgjrtv2yxmca" path="res://Images/Background_Grid_00.png" id="1_38p7r"]
 [ext_resource type="Script" path="res://ShipBuilderMenu/ship_builder_menu.gd" id="1_u0eiv"]
 [ext_resource type="PackedScene" uid="uid://dcr43wwjbl277" path="res://ShipBuilderMenu/parts_menu.tscn" id="2_wils6"]
-[ext_resource type="PackedScene" uid="uid://b16lk8x5sl2ed" path="res://ShipBuilderMenu/mouse_display.tscn" id="4_g47fr"]
 
 [node name="ship_builder_menu" type="Node2D"]
 script = ExtResource("1_u0eiv")
@@ -26,7 +25,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
-offset_bottom = 69.0
+offset_bottom = 64.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
@@ -36,6 +35,4 @@ offset_right = 640.0
 offset_bottom = 27.0
 
 [node name="Hull_Anchor_Point" type="Node2D" parent="."]
-position = Vector2(307, 177)
-
-[node name="MouseDisplay" parent="." instance=ExtResource("4_g47fr")]
+position = Vector2(320, 180)

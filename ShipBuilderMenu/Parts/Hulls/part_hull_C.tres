@@ -1,16 +1,22 @@
-[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://bttqlrsfdd0vi"]
+[gd_resource type="Resource" script_class="PartData" load_steps=6 format=3 uid="uid://bttqlrsfdd0vi"]
 
-[ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_ar4nr"]
-[ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="1_god77"]
+[ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_c6il6"]
+[ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="2_m5xqe"]
+[ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="2_rq4ds"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iece5"]
-atlas = ExtResource("1_ar4nr")
+atlas = ExtResource("1_c6il6")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8olc"]
+atlas = ExtResource("2_rq4ds")
 region = Rect2(0, 128, 64, 64)
 
 [resource]
-script = ExtResource("1_god77")
+script = ExtResource("2_m5xqe")
 name = "Alien Hull"
 description = "Ship hull desinged after an alien space ship."
-part_types = 0
+part_type = 0
 cost = 10000.0
 icon = SubResource("AtlasTexture_iece5")
+texture = SubResource("AtlasTexture_j8olc")

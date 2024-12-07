@@ -1,16 +1,24 @@
-[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://bmswbwbl4sy5c"]
+[gd_resource type="Resource" script_class="PartData" load_steps=7 format=3 uid="uid://bmswbwbl4sy5c"]
 
-[ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_2cgt4"]
-[ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="1_u72i3"]
+[ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_80yu2"]
+[ext_resource type="PackedScene" uid="uid://bk0rq3fsiqxku" path="res://ShipBuilderMenu/Parts-Building-Blocks/Engines/engine_a.tscn" id="2_cgb1f"]
+[ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="2_laoo6"]
+[ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="2_v8781"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mva2y"]
-atlas = ExtResource("1_2cgt4")
+atlas = ExtResource("1_80yu2")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd0bd"]
+atlas = ExtResource("2_laoo6")
 region = Rect2(192, 64, 64, 64)
 
 [resource]
-script = ExtResource("1_u72i3")
+script = ExtResource("2_v8781")
 name = "Eddie Drive Mk 2"
 description = "Most common ship engine in the galexy."
-part_types = 1
+part_type = 1
 cost = 400.0
 icon = SubResource("AtlasTexture_mva2y")
+texture = SubResource("AtlasTexture_jd0bd")
+part_build_scene = ExtResource("2_cgb1f")

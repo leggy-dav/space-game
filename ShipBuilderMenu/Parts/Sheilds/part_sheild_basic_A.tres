@@ -1,16 +1,22 @@
-[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://v8q6rbk6h1g6"]
+[gd_resource type="Resource" script_class="PartData" load_steps=6 format=3 uid="uid://v8q6rbk6h1g6"]
 
 [ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_3wp7i"]
 [ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="1_fiqfe"]
+[ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="2_0t12k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jkr1j"]
 atlas = ExtResource("1_3wp7i")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqmpu"]
+atlas = ExtResource("2_0t12k")
 region = Rect2(256, 0, 64, 64)
 
 [resource]
 script = ExtResource("1_fiqfe")
 name = "Mag Shield A"
 description = "Basic shield used by most star ships."
-part_types = 4
+part_type = 4
 cost = 500.0
 icon = SubResource("AtlasTexture_jkr1j")
+texture = SubResource("AtlasTexture_wqmpu")

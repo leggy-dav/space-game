@@ -1,8 +1,9 @@
 extends Control
 
+
 const PART_SLOT = preload("res://ShipBuilderMenu/Parts/part_slot.tscn")
 
-var grabed_parts_data: PartData
+var grabbed_parts_data: PartData
 
 # default grid_conainer are the ship hulls
 @onready var grid_container: GridContainer = $PartsDisplay/GridContainer
@@ -13,6 +14,9 @@ var grabed_parts_data: PartData
 @export var ship_part_utilites: ShipPartsGroup
 @export var ship_part_weapons: ShipPartsGroup
 @export var ship_part_sheilds: ShipPartsGroup
+
+
+signal update_grabbed_parts_display(part_data: PartData)
 
 
 func _ready() -> void:
@@ -40,7 +44,7 @@ func populate_grid_container(ship_parts: ShipPartsGroup) -> void:
 			var new_slot = PART_SLOT.instantiate()
 			grid_container.add_child(new_slot)
 			new_slot.set_part_info(item_data)
-			new_slot.slot_clicked.connect(ship_parts.on_slot_clicked)
+			new_slot.slot_clicked.connect(ship_parts.on_slot_clicked) # signal!
 		else:
 			print("Nill Item Data")
 		pass
@@ -48,15 +52,33 @@ func populate_grid_container(ship_parts: ShipPartsGroup) -> void:
 
 func on_ship_parts_group_interact(_ship_parts_group: ShipPartsGroup, 
 		index: int, button_index: int):
-	print('Ship Builder Menu On Ship Parts Group Interact')
-	print("\tName: ", _ship_parts_group.part_slots[index].name)
 	
 	# TODO: add conditional (match) to handle grabbing a part
-	match [grabed_parts_data, button_index]:
+	match [grabbed_parts_data, button_index]:
 		[null, MOUSE_BUTTON_LEFT]:
-			grabed_parts_data = _ship_parts_group.get_slot_data(index)
+			grabbed_parts_data = _ship_parts_group.get_slot_data(index)
+			
+			update_grabbed_parts_display.emit(grabbed_parts_data)
+			
+			if grabbed_parts_data.is_hull():
+				grabbed_parts_data = null
+		
+		[grabbed_parts_data, MOUSE_BUTTON_LEFT]:
+			grabbed_parts_data = _ship_parts_group.get_slot_data(index)
+			
+			update_grabbed_parts_display.emit(grabbed_parts_data)
+			
+			if grabbed_parts_data.is_hull():
+				grabbed_parts_data = null
+			
 	
-	print("Grabbed Part: ", grabed_parts_data.name)
+	if grabbed_parts_data:
+		print("Grabbed Part: ", grabbed_parts_data.name)
+	print()
+
+
+func clear_grabbed_part():
+	grabbed_parts_data = null
 
 
 func _on_hulls_button_pressed() -> void:
