@@ -15,6 +15,5 @@ func get_slot_data(index: int) -> PartData:
 
 
 func on_slot_clicked(index, button_index):
-	print("Ship Part Group : button_index=", button_index, '\t', part_slots[button_index].name)
 	ship_parts_group_interact.emit(self, index, button_index)
 	pass

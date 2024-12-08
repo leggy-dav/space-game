@@ -55,7 +55,7 @@ func on_ship_parts_group_interact(_ship_parts_group: ShipPartsGroup,
 	
 	# TODO: add conditional (match) to handle grabbing a part
 	match [grabbed_parts_data, button_index]:
-		[null, MOUSE_BUTTON_LEFT]:
+		[_, MOUSE_BUTTON_LEFT]:
 			grabbed_parts_data = _ship_parts_group.get_slot_data(index)
 			
 			update_grabbed_parts_display.emit(grabbed_parts_data)
@@ -63,18 +63,13 @@ func on_ship_parts_group_interact(_ship_parts_group: ShipPartsGroup,
 			if grabbed_parts_data.is_hull():
 				grabbed_parts_data = null
 		
-		[grabbed_parts_data, MOUSE_BUTTON_LEFT]:
-			grabbed_parts_data = _ship_parts_group.get_slot_data(index)
-			
-			update_grabbed_parts_display.emit(grabbed_parts_data)
-			
-			if grabbed_parts_data.is_hull():
-				
-				grabbed_parts_data = null
-			
-	
-	if grabbed_parts_data:
-		print("Grabbed Part: ", grabbed_parts_data.name)
+		#[grabbed_parts_data, MOUSE_BUTTON_LEFT]:
+			#grabbed_parts_data = _ship_parts_group.get_slot_data(index)
+			#
+			#update_grabbed_parts_display.emit(grabbed_parts_data)
+			#
+			#if grabbed_parts_data.is_hull():
+				#grabbed_parts_data = null
 	print()
 
 
