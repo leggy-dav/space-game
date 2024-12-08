@@ -12,6 +12,14 @@ func _process(delta: float) -> void:
 
 
 func set_part_info(part_data: PartData):
-	if part_data.part_build_scene:
-		pass
+	if part_data.is_hull():
+		return
+	
+	
+	
+	
+	pass
+
+
+func clear_part_info():
 	pass

@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 	for child in get_children():
 		if child is Node2D:
-			print('Node2D\t', child.name)
+			#print('Node2D\t', child.name)
 			attachment_nodes.append(child)
 	
 	for item in attachment_nodes:

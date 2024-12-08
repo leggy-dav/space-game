@@ -69,6 +69,7 @@ func on_ship_parts_group_interact(_ship_parts_group: ShipPartsGroup,
 			update_grabbed_parts_display.emit(grabbed_parts_data)
 			
 			if grabbed_parts_data.is_hull():
+				
 				grabbed_parts_data = null
 			
 	
