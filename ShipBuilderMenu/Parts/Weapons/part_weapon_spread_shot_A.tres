@@ -1,16 +1,12 @@
-[gd_resource type="Resource" script_class="PartData" load_steps=6 format=3 uid="uid://kbpi7f687g6k"]
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://kbpi7f687g6k"]
 
 [ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_b7lwg"]
 [ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="2_frbw3"]
-[ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="3_8q7c6"]
+[ext_resource type="PackedScene" uid="uid://bhakq3ms3fkd6" path="res://ShipBuilderMenu/Parts-Building-Blocks/Weapons/spread_shot_a.tscn" id="2_wbbuk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkoec"]
 atlas = ExtResource("1_b7lwg")
 region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mwxcg"]
-atlas = ExtResource("3_8q7c6")
-region = Rect2(128, 128, 64, 64)
 
 [resource]
 script = ExtResource("2_frbw3")
@@ -19,4 +15,4 @@ description = "Spread shot cannon which fires off a volley of balistic projectil
 part_type = 3
 cost = 700.0
 icon = SubResource("AtlasTexture_nkoec")
-texture = SubResource("AtlasTexture_mwxcg")
+part_scene = ExtResource("2_wbbuk")

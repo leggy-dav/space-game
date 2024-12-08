@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crbsmn08v8cn7"]
+
+[ext_resource type="Script" path="res://ShipBuilderMenu/Parts-Building-Blocks/attachment_base.gd" id="1_trg7k"]
+
+[node name="Attachment_Base" type="Node2D"]
+script = ExtResource("1_trg7k")

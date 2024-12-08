@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://43yd5c4xnivr"]
+
+[ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="1_s0gmp"]
+[ext_resource type="PackedScene" uid="uid://dtjdesw2bp7f7" path="res://ShipBuilderMenu/Parts-Building-Blocks/anchor_base.tscn" id="2_j2ro0"]
+[ext_resource type="PackedScene" uid="uid://bq0ch4l0yeta4" path="res://ShipBuilderMenu/Parts-Building-Blocks/anchor_point.tscn" id="3_gmy4b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abaxu"]
+atlas = ExtResource("1_s0gmp")
+region = Rect2(128, 0, 64, 64)
+
+[node name="Cannon_Basic" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -32.0
+offset_top = -38.0
+offset_right = 32.0
+offset_bottom = 26.0
+texture = SubResource("AtlasTexture_abaxu")
+
+[node name="Anchor_Base" parent="." instance=ExtResource("2_j2ro0")]
+
+[node name="AP_00" parent="Anchor_Base" instance=ExtResource("3_gmy4b")]

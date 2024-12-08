@@ -1,16 +1,12 @@
-[gd_resource type="Resource" script_class="PartData" load_steps=6 format=3 uid="uid://rvhpenrlsd48"]
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://rvhpenrlsd48"]
 
 [ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_stanx"]
+[ext_resource type="PackedScene" uid="uid://blh1tslycrcwj" path="res://ShipBuilderMenu/Parts-Building-Blocks/Hulls/hull_b.tscn" id="2_fffe1"]
 [ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="2_korkw"]
-[ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="2_n5m27"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxckp"]
 atlas = ExtResource("1_stanx")
 region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pwstm"]
-atlas = ExtResource("2_n5m27")
-region = Rect2(0, 64, 64, 64)
 
 [resource]
 script = ExtResource("2_korkw")
@@ -19,4 +15,4 @@ description = "Rounded Hull, something out of science fiction."
 part_type = 0
 cost = 2000.0
 icon = SubResource("AtlasTexture_fxckp")
-texture = SubResource("AtlasTexture_pwstm")
+part_scene = ExtResource("2_fffe1")

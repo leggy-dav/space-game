@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbkc2r02pl6o1"]
+
+[ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="1_6swli"]
+[ext_resource type="PackedScene" uid="uid://crbsmn08v8cn7" path="res://ShipBuilderMenu/Parts-Building-Blocks/attachment_base.tscn" id="2_5npkm"]
+[ext_resource type="PackedScene" uid="uid://cl5inicctl64l" path="res://ShipBuilderMenu/Parts-Building-Blocks/attachment_point.tscn" id="3_kif80"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yncso"]
+atlas = ExtResource("1_6swli")
+region = Rect2(0, 128, 64, 64)
+
+[node name="Hull_C" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_yncso")
+
+[node name="Attachment_Base" parent="." instance=ExtResource("2_5npkm")]
+
+[node name="AP_00" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(0, -13)
+allow_engine = false
+
+[node name="AP_01" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(7, -8)
+allow_engine = false
+
+[node name="AP_02" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(11, -1)
+allow_engine = false
+
+[node name="AP_03" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(14, 4)
+allow_engine = false
+
+[node name="AP_04" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(11, 10)
+
+[node name="AP_05" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(6, 13)
+allow_sheild = false
+allow_weapon = false
+
+[node name="AP_06" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(0, 12)
+allow_sheild = false
+allow_weapon = false
+
+[node name="AP_07" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(-5, 13)
+allow_sheild = false
+allow_weapon = false
+
+[node name="AP_08" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(-11, 10)
+allow_sheild = false
+allow_weapon = false
+
+[node name="AP_09" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(-14, 4)
+allow_engine = false
+
+[node name="AP_10" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(-11, -1)
+allow_engine = false
+
+[node name="AP_11" parent="Attachment_Base" instance=ExtResource("3_kif80")]
+position = Vector2(-7, -8)
+allow_engine = false

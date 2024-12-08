@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://blh1tslycrcwj"]
+
+[ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="1_724li"]
+[ext_resource type="PackedScene" uid="uid://crbsmn08v8cn7" path="res://ShipBuilderMenu/Parts-Building-Blocks/attachment_base.tscn" id="2_ykyqn"]
+[ext_resource type="PackedScene" uid="uid://cl5inicctl64l" path="res://ShipBuilderMenu/Parts-Building-Blocks/attachment_point.tscn" id="3_dkvac"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87uno"]
+atlas = ExtResource("1_724li")
+region = Rect2(0, 64, 64, 64)
+
+[node name="Hull_B" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_87uno")
+
+[node name="Attachment_Base" parent="." instance=ExtResource("2_ykyqn")]
+
+[node name="AP_00" parent="Attachment_Base" instance=ExtResource("3_dkvac")]
+position = Vector2(0, -13)
+allow_engine = false
+
+[node name="AP_01" parent="Attachment_Base" instance=ExtResource("3_dkvac")]
+position = Vector2(8, -9)
+allow_engine = false
+
+[node name="AP_02" parent="Attachment_Base" instance=ExtResource("3_dkvac")]
+position = Vector2(13, 0)
+allow_engine = false
+
+[node name="AP_03" parent="Attachment_Base" instance=ExtResource("3_dkvac")]
+position = Vector2(9, 8)
+allow_weapon = false
+
+[node name="AP_04" parent="Attachment_Base" instance=ExtResource("3_dkvac")]
+position = Vector2(0, 13)
+allow_sheild = false
+allow_weapon = false
+
+[node name="AP_05" parent="Attachment_Base" instance=ExtResource("3_dkvac")]
+position = Vector2(-9, 8)
+allow_weapon = false
+
+[node name="AP_06" parent="Attachment_Base" instance=ExtResource("3_dkvac")]
+position = Vector2(-13, 0)
+allow_engine = false
+
+[node name="AP_07" parent="Attachment_Base" instance=ExtResource("3_dkvac")]
+position = Vector2(-8, -9)
+allow_engine = false

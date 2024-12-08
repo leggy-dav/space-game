@@ -1,16 +1,12 @@
-[gd_resource type="Resource" script_class="PartData" load_steps=6 format=3 uid="uid://v8q6rbk6h1g6"]
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://v8q6rbk6h1g6"]
 
 [ext_resource type="Texture2D" uid="uid://tgfha2tsx84h" path="res://Images/shipt_parts_00_icons.tres" id="1_3wp7i"]
 [ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="1_fiqfe"]
-[ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="2_0t12k"]
+[ext_resource type="PackedScene" uid="uid://ch0chkfsjlcpm" path="res://ShipBuilderMenu/Parts-Building-Blocks/Shields/sheild_basic_a.tscn" id="2_0x40a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jkr1j"]
 atlas = ExtResource("1_3wp7i")
 region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wqmpu"]
-atlas = ExtResource("2_0t12k")
-region = Rect2(256, 0, 64, 64)
 
 [resource]
 script = ExtResource("1_fiqfe")
@@ -19,4 +15,4 @@ description = "Basic shield used by most star ships."
 part_type = 4
 cost = 500.0
 icon = SubResource("AtlasTexture_jkr1j")
-texture = SubResource("AtlasTexture_wqmpu")
+part_scene = ExtResource("2_0x40a")

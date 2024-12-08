@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b024mkpi7ca5x"]
+[gd_scene load_steps=7 format=3 uid="uid://b024mkpi7ca5x"]
 
 [ext_resource type="Texture2D" uid="uid://blgjrtv2yxmca" path="res://Images/Background_Grid_00.png" id="1_38p7r"]
 [ext_resource type="Script" path="res://ShipBuilderMenu/ship_builder_menu.gd" id="1_u0eiv"]
 [ext_resource type="PackedScene" uid="uid://dcr43wwjbl277" path="res://ShipBuilderMenu/parts_menu.tscn" id="2_wils6"]
 [ext_resource type="PackedScene" uid="uid://b16lk8x5sl2ed" path="res://ShipBuilderMenu/mouse_display.tscn" id="4_g47fr"]
+[ext_resource type="PackedScene" uid="uid://diowc7rrifuhd" path="res://ShipBuilderMenu/Parts-Building-Blocks/Hulls/hull_a.tscn" id="5_hn5s6"]
+[ext_resource type="PackedScene" uid="uid://b1anmh2blvpc8" path="res://ShipBuilderMenu/Parts-Building-Blocks/Utilities/util_attach_a_long.tscn" id="6_wvj2s"]
 
 [node name="ship_builder_menu" type="Node2D"]
 script = ExtResource("1_u0eiv")
@@ -39,3 +41,11 @@ offset_bottom = 27.0
 position = Vector2(307, 177)
 
 [node name="MouseDisplay" parent="." instance=ExtResource("4_g47fr")]
+
+[node name="Hull_A" parent="." instance=ExtResource("5_hn5s6")]
+position = Vector2(307, 178)
+scale = Vector2(2, 2)
+
+[node name="Util_Attach_A_Long" parent="." instance=ExtResource("6_wvj2s")]
+position = Vector2(329, 172)
+scale = Vector2(2, 2)
