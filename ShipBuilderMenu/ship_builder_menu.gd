@@ -12,6 +12,7 @@ var part_position_offset: Vector2 = Vector2.ZERO
 var part_position_origin: Vector2 = Vector2.ZERO
 var mouse_position: Vector2 = Vector2.ZERO
 var can_drag: bool = false
+var snap_point: Area2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,9 +27,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if curr_attachment_part and mouse_part_in_drag_range():
-		curr_attachment_part.position = mouse_position + part_position_offset
-	pass
+	if curr_attachment_part:
+		if snap_point:
+			curr_attachment_part.position = snap_point.global_position - part_position_offset
+		elif curr_attachment_part and mouse_part_in_drag_range():
+			curr_attachment_part.position = mouse_position - part_position_offset
+		pass
 
 
 func _input(event: InputEvent) -> void:
@@ -61,7 +65,9 @@ func _input(event: InputEvent) -> void:
 				and event.is_pressed():
 			place_part()
 			pass
-			
+
+func mouse_entered_attachement_point_area():
+	pass
 
 
 func update_mouse_part_display(part_data: PartData) -> void:
@@ -89,6 +95,14 @@ func update_hull(part_data: PartData):
 	var hull_part = part_data.part_scene.instantiate()
 	hull_anchor_point.add_child(hull_part)
 	hull_part.set_scale(hull_part.get_scale() * part_up_scale)
+	
+	# ATTACHMENT POINT SIGNALS FOR HULL
+	for child in hull_part.find_child("Attachment_Base").attachment_nodes:
+		print("\tAttachment_Base Child: ", child.name)
+		child.attach_point_mouse_entered.connect(snap_part_to)
+		child.attach_point_mouse_exit.connect(unsnap_part)
+		pass
+	
 	curr_hull_part = part_data
 
 
@@ -197,6 +211,56 @@ func adjust_offset(degree_rotation, anchor_point):
 func place_part():
 	# check if part can be placed
 	print('Place Part')
-	parts_menu.clear_grabbed_part()
-	curr_attachment_part = null
-	pass
+	if snap_point:
+		
+		# activate part attachment point
+		var attachment_base = curr_attachment_part.find_child("Attachment_Base")
+		if attachment_base:
+			print('Attachment Base : ', attachment_base)
+			attachment_base.show()
+			
+			for child in attachment_base.attachment_nodes:
+				child.attach_point_mouse_entered.connect(snap_part_to)
+				child.attach_point_mouse_exit.connect(unsnap_part)
+				pass
+			
+			# hide the point that's attaching to the other point
+			# will cause issues if attachment point and anchor point doen't overlap 
+			var anchor_base = curr_attachment_part.find_child("Anchor_Base")
+			var ab = anchor_base.get_current_anchor_point().global_position
+			var nearest_point = attachment_base.get_nearest_point_global(ab)
+			if nearest_point:
+				print('\tNearest Point : ', nearest_point)
+				nearest_point.hide()
+			
+		
+		# deactivate parent part
+		#	might need to keep track of the parts and their attachment points
+		#	that way later on if we want to pick up these items we can
+		print('Snap Point Parent : ', snap_point.get_parent())
+		curr_attachment_part.reparent(snap_point.get_parent())
+		#.add_child(curr_attachment_part)
+		snap_point.hide()
+		
+		# deactivate new part anchor point
+		
+		#var partent_attachment_base = 
+		#var point_index = attachment_base.get_point_index(snap_point)
+		#if point_index >= 0:
+			#attachment_base.hide_point(point_index)
+		
+		# clean up part stuff
+		parts_menu.clear_grabbed_part()
+		snap_point = null
+		curr_attachment_part = null
+		pass
+
+
+func snap_part_to(point: Area2D):
+	snap_point = point
+	print('Snap Point To: ', point)
+
+
+func unsnap_part():
+	snap_point = null
+	print('Unsap Part!')
