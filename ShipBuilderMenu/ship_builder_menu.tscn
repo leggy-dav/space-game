@@ -54,6 +54,7 @@ theme_override_font_sizes/font_size = 8
 text = "R - Rotate
 C - Change Anchor Point
 T - Hide Snap Points
+ESC - Deselect Part
 Click to place Part"
 vertical_alignment = 1
 
