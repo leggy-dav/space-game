@@ -39,7 +39,7 @@ func get_current_anchor_point() -> Area2D:
 
 func set_next_anchor_point() -> Area2D:
 	anchor_index += 1
-	if anchor_index > anchor_points.size():
+	if anchor_index >= anchor_points.size():
 		anchor_index = 0
 	print('new anchor index: ', anchor_index)
 	return anchor_points[anchor_index]
