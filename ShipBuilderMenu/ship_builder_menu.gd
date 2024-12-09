@@ -225,7 +225,6 @@ func place_part():
 				pass
 			
 			# hide the point that's attaching to the other point
-			# will cause issues if attachment point and anchor point doen't overlap 
 			var anchor_base = curr_attachment_part.find_child("Anchor_Base")
 			var ab = anchor_base.get_current_anchor_point().global_position
 			var nearest_point = attachment_base.get_nearest_point_global(ab)

@@ -1,5 +1,9 @@
 extends Node2D
 
+
+@onready var texture_rect: TextureRect = $TextureRect
+
+
 @export_category("Attachment Exclude")
 #@export_group("Attachment Exclude")
 @export var allow_engine: bool = true
@@ -12,6 +16,7 @@ extends Node2D
 
 var active: bool = true
 var index: int = -1
+var texture_hidden: bool = false
 
 signal attach_point_mouse_entered(Area2D)
 signal attach_point_mouse_exit()
@@ -28,6 +33,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("toggle_anchor_view"):
+		texture_hidden = not texture_hidden
+		if texture_hidden:
+			texture_rect.hide()
+		else:
+			texture_rect.show()
+		pass
 
 func is_active():
 	return active

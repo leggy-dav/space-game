@@ -29,10 +29,33 @@ offset_bottom = 69.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Menu_Header"]
-layout_mode = 0
+[node name="Info Window" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 531.0
+offset_top = 236.0
 offset_right = 640.0
-offset_bottom = 27.0
+offset_bottom = 360.0
+
+[node name="Panel" type="Panel" parent="Info Window"]
+layout_mode = 2
+offset_right = 108.0
+offset_bottom = 123.0
+
+[node name="Label" type="Label" parent="Info Window/Panel"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 107.0
+offset_bottom = 29.0
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "R - Rotate
+C - Change Anchor Point
+T - Hide Snap Points
+Click to place Part"
+vertical_alignment = 1
 
 [node name="Hull_Anchor_Point" type="Node2D" parent="."]
 position = Vector2(307, 177)
