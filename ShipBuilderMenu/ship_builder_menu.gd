@@ -263,3 +263,8 @@ func snap_part_to(point: Area2D):
 func unsnap_part():
 	snap_point = null
 	print('Unsap Part!')
+
+
+func _on_btn_exit_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+	pass # Replace with function body.
