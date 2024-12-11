@@ -62,11 +62,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Save"
 
-[node name="TextEdit" type="TextEdit" parent="Menu_Header/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(200, 40)
-layout_direction = 1
+[node name="LineEdit" type="LineEdit" parent="Menu_Header/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 placeholder_text = "Ship Name"
+alignment = 1
+max_length = 150
 
 [node name="Label" type="Label" parent="Menu_Header/MarginContainer/HBoxContainer"]
 layout_mode = 2
