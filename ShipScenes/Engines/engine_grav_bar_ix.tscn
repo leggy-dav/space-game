@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkxhcfulpj0k5"]
+[gd_scene load_steps=5 format=3 uid="uid://bkxhcfulpj0k5"]
 
+[ext_resource type="Script" path="res://ShipScenes/engine.gd" id="1_2fnoc"]
 [ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="1_bv030"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7wiuq"]
@@ -11,6 +12,7 @@ atlas = ExtResource("1_bv030")
 region = Rect2(192, 128, 64, 64)
 
 [node name="Engine_GravBar_IX" type="Area2D"]
+script = ExtResource("1_2fnoc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

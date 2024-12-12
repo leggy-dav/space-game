@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://gefrx2kclcfg"]
+[gd_scene load_steps=4 format=3 uid="uid://gefrx2kclcfg"]
 
+[ext_resource type="Script" path="res://ShipScenes/engine.gd" id="1_03r3d"]
 [ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="1_lptnc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aep3b"]
@@ -7,6 +8,7 @@ atlas = ExtResource("1_lptnc")
 region = Rect2(192, 64, 64, 64)
 
 [node name="Engine_Mk_01" type="Area2D"]
+script = ExtResource("1_03r3d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 build_mode = 1

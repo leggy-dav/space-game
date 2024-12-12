@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://ud5afjof6rhy"]
+
+[ext_resource type="PackedScene" uid="uid://eejnyt74ggve" path="res://ShipScenes/Hulls/hull_a.tscn" id="1_41tev"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_yt24t"]
+[ext_resource type="PackedScene" uid="uid://bm7lsp7kucpyn" path="res://ShipScenes/Utilities/attachment_a_long.tscn" id="2_6kq25"]
+[ext_resource type="PackedScene" uid="uid://bvbgy7w1ora5c" path="res://ShipScenes/Sheilds/mag_shield_a.tscn" id="3_7ilwu"]
+[ext_resource type="PackedScene" uid="uid://buw2qcol5fg0p" path="res://ShipScenes/Weapons/ballistic_cannon.tscn" id="4_66njn"]
+[ext_resource type="PackedScene" uid="uid://gefrx2kclcfg" path="res://ShipScenes/Engines/engine_mk_01.tscn" id="5_2lmyn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sc65i"]
+radius = 2.23607
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_yt24t")
+
+[node name="Hull_A" parent="." instance=ExtResource("1_41tev")]
+
+[node name="Engine_Mk_01" parent="Hull_A" instance=ExtResource("5_2lmyn")]
+position = Vector2(-4, 15)
+
+[node name="Engine_Mk_02" parent="Hull_A" instance=ExtResource("5_2lmyn")]
+position = Vector2(4, 15)
+
+[node name="Attachment_A_Long" parent="Hull_A" instance=ExtResource("2_6kq25")]
+position = Vector2(13, 7)
+rotation = 1.5708
+
+[node name="Ballistic_Cannon2" parent="Hull_A/Attachment_A_Long" instance=ExtResource("4_66njn")]
+position = Vector2(-8.00001, -2.99997)
+rotation = -1.5708
+
+[node name="Attachment_A_Long2" parent="Hull_A" instance=ExtResource("2_6kq25")]
+position = Vector2(-13, 7)
+rotation = -1.5708
+
+[node name="Ballistic_Cannon" parent="Hull_A/Attachment_A_Long2" instance=ExtResource("4_66njn")]
+position = Vector2(8, -3.00001)
+rotation = 1.5708
+
+[node name="Mag_Shield_A" parent="Hull_A" instance=ExtResource("3_7ilwu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sc65i")

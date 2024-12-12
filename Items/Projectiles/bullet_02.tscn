@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1tplnws8bguv"]
+
+[ext_resource type="Script" path="res://Items/Projectiles/bullet_02.gd" id="1_35x8i"]
+[ext_resource type="Texture2D" uid="uid://qtqm0nyo043p" path="res://Images/sprite-bullet-00_0.png" id="1_ifvr2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kymoo"]
+size = Vector2(2, 2)
+
+[node name="Bullet_02" type="Area2D"]
+script = ExtResource("1_35x8i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kymoo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("1_ifvr2")
+
+[node name="Timer" type="Timer" parent="."]

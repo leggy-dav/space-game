@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://eejnyt74ggve"]
+[gd_scene load_steps=5 format=3 uid="uid://eejnyt74ggve"]
 
+[ext_resource type="Script" path="res://ShipScenes/hull.gd" id="1_5msj2"]
 [ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="1_dyiuk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cf83t"]
@@ -11,6 +12,7 @@ radius = 9.0
 height = 28.0
 
 [node name="Hull_A" type="Area2D"]
+script = ExtResource("1_5msj2")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1

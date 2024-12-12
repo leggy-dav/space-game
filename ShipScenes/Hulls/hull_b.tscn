@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://civekfuvm72ap"]
+[gd_scene load_steps=5 format=3 uid="uid://civekfuvm72ap"]
 
 [ext_resource type="Texture2D" uid="uid://lm57dao4u1hh" path="res://Images/ship_parts_00_parts.tres" id="1_3d1mp"]
+[ext_resource type="Script" path="res://ShipScenes/hull.gd" id="1_6xyux"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_47ykq"]
 atlas = ExtResource("1_3d1mp")
@@ -10,6 +11,7 @@ region = Rect2(0, 64, 64, 64)
 radius = 13.0
 
 [node name="Hull_B" type="Area2D"]
+script = ExtResource("1_6xyux")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
