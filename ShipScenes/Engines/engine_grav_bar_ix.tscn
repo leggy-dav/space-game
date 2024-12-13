@@ -13,6 +13,7 @@ region = Rect2(192, 128, 64, 64)
 
 [node name="Engine_GravBar_IX" type="Area2D"]
 script = ExtResource("1_2fnoc")
+self_packed_scene = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
