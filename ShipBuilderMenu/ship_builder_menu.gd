@@ -13,14 +13,15 @@ var part_position_origin: Vector2 = Vector2.ZERO
 var mouse_position: Vector2 = Vector2.ZERO
 var can_drag: bool = false
 var snap_point: Area2D = null
+var part_placement: Dictionary = {}
+
+
+const SHIP_MANAGER = preload("res://Managers/ship_manager.tres")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	parts_menu.update_grabbed_parts_display.connect(update_mouse_part_display)
-	print('Mouse_Drag_Limit Pos: ', mouse_drag_limit.position)
-	print("Mouse_Drag_limit bottom: ", mouse_drag_limit.size)
-
 	pass # Replace with function body.
 
 
@@ -73,6 +74,10 @@ func mouse_entered_attachement_point_area():
 func update_mouse_part_display(part_data: PartData) -> void:
 	
 	if part_data.is_hull():
+		part_placement = {
+			"name": part_data.name,
+			""
+		}
 		update_hull(part_data)
 	else:
 		# HANDLE A SHIP PART
@@ -267,4 +272,11 @@ func unsnap_part():
 
 func _on_btn_exit_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+	pass # Replace with function body.
+
+
+func _on_btn_save_pressed() -> void:
+	if hull_anchor_point.get_child_count() != 0:
+		var curr_hull = hull_anchor_point.get_child(0)
+		SHIP_MANAGER.save_ship(curr_hull)
 	pass # Replace with function body.

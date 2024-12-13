@@ -6,6 +6,7 @@
 
 [node name="ship_builder_menu" type="Node2D"]
 script = ExtResource("1_u0eiv")
+part_up_scale = null
 
 [node name="Backgound_Texture" type="TextureRect" parent="."]
 offset_right = 640.0
@@ -115,4 +116,3 @@ offset_right = 517.0
 offset_bottom = 333.0
 
 [connection signal="pressed" from="Menu_Header/MarginContainer/HBoxContainer/HBoxContainer/Btn-Exit" to="." method="_on_btn_exit_pressed"]
-[connection signal="pressed" from="Menu_Header/MarginContainer/HBoxContainer/HBoxContainer/Btn-Save" to="." method="_on_btn_save_pressed"]

@@ -115,4 +115,3 @@ offset_right = 517.0
 offset_bottom = 333.0
 
 [connection signal="pressed" from="Menu_Header/MarginContainer/HBoxContainer/HBoxContainer/Btn-Exit" to="." method="_on_btn_exit_pressed"]
-[connection signal="pressed" from="Menu_Header/MarginContainer/HBoxContainer/HBoxContainer/Btn-Save" to="." method="_on_btn_save_pressed"]
