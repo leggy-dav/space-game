@@ -76,7 +76,7 @@ func update_mouse_part_display(part_data: PartData) -> void:
 	if part_data.is_hull():
 		part_placement = {
 			"name": part_data.name,
-			""
+			"": ""
 		}
 		update_hull(part_data)
 	else:

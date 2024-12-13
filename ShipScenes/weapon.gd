@@ -1,6 +1,6 @@
 extends Area2D
 
-class_name Weapon
+class_name WeaponPart
 
 
 @export_category("Weapon Info")

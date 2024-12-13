@@ -1,6 +1,6 @@
 extends Area2D
 
-class_name Hull
+class_name HullPart
 
 
 @export_category("General Part Info")
