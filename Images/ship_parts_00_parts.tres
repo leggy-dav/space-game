@@ -1,9 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=3 format=3 uid="uid://lm57dao4u1hh"]
-
-[ext_resource type="Texture2D" uid="uid://cv8yx2iabsvjb" path="res://Images/Ship_Parts_00_export.png" id="1_3c14p"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k5pfp"]
-atlas = ExtResource("1_3c14p")
-
-[resource]
-atlas = SubResource("AtlasTexture_k5pfp")

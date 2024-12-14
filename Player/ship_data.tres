@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="ShipData" load_steps=2 format=3 uid="uid://c2im3p7d1l3mi"]
-
-[ext_resource type="Script" path="res://Player/ship_data.gd" id="1_auwea"]
-
-[resource]
-script = ExtResource("1_auwea")
-name = ""

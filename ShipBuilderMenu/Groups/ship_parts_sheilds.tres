@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="ShipPartsGroup" load_steps=4 format=3 uid="uid://dt3o823vdaorp"]
-
-[ext_resource type="Script" path="res://ShipBuilderMenu/Parts/part_data.gd" id="1_umfg2"]
-[ext_resource type="Resource" uid="uid://v8q6rbk6h1g6" path="res://ShipBuilderMenu/Parts/Sheilds/part_sheild_basic_A.tres" id="2_mh0n3"]
-[ext_resource type="Script" path="res://ShipBuilderMenu/Groups/ship_parts_group.gd" id="2_w65ft"]
-
-[resource]
-script = ExtResource("2_w65ft")
-part_slots = Array[ExtResource("1_umfg2")]([ExtResource("2_mh0n3")])
