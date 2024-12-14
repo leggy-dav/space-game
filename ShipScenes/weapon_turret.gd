@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name TurretPart
+
 @export_category("Weapon Info")
 @export var rate_of_fire: float = 1.0
 @export var projectile: PackedScene

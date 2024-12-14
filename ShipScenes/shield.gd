@@ -1,6 +1,6 @@
 extends Area2D
 
-class_name Shield
+class_name ShieldPart
 
 @export_category("Shield Info")
 @export var sheild_defense: float = 100.0
