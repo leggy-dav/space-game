@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://blbfjkokjqbtq"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/cockpit_part.gd" id="1_ei5f6"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_hg2q1"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="3_1niej"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="4_4ubyf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw63x"]
+atlas = ExtResource("2_hg2q1")
+region = Rect2(80, 0, 16, 32)
+
+[node name="CockpitObj05" type="Area2D"]
+script = ExtResource("1_ei5f6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 8.0
+offset_bottom = 8.0
+texture = SubResource("AtlasTexture_uw63x")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, -5, 0, -5, -14, -4, -17, -1, -20, 1, -20, 4, -17, 5, -14, 5, 0)
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("3_1niej")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+script = ExtResource("4_4ubyf")

@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwvwyl1t3m5oe"]
 
-[ext_resource type="Script" path="res://Misc/connection_point.gd" id="1_uid51"]
+[ext_resource type="Script" path="res://Misc/Connection/connection_point.gd" id="1_uid51"]
 [ext_resource type="Texture2D" uid="uid://dimuqxamlihjn" path="res://Images/Attachment_Point_001.png" id="2_g8v3c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cavbs"]
 radius = 2.23607
 
-[node name="ConPoint00" type="Area2D"]
+[node name="CP_00" type="Area2D"]
 script = ExtResource("1_uid51")
 
 [node name="TextureRect" type="TextureRect" parent="."]

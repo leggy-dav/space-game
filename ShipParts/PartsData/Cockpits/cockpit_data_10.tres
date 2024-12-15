@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://dmc84nxmuy1qe"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_jeova"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_oym2j"]
+[ext_resource type="PackedScene" uid="uid://b4ta4cvmbhvj6" path="res://ShipParts/PartsObjs/Cockpits/cockpit_obj_10.tscn" id="2_l4m1h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exd7n"]
+atlas = ExtResource("1_jeova")
+region = Rect2(64, 32, 16, 32)
+
+[resource]
+script = ExtResource("1_oym2j")
+name = "Alien Control 04"
+description = ""
+cost = 6800.0
+part_type = 0
+icon = SubResource("AtlasTexture_exd7n")
+packed_scene = ExtResource("2_l4m1h")

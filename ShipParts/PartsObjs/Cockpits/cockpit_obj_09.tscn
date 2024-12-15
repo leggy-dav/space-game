@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf4bwne6qnuj0"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/cockpit_part.gd" id="1_tjsw5"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_qpt63"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="3_wt1q6"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="4_e2alp"]
+[ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="5_gmaqi"]
+[ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="6_23ha3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx7gp"]
+atlas = ExtResource("2_qpt63")
+region = Rect2(48, 32, 16, 32)
+
+[node name="CockpitObj09" type="Area2D"]
+script = ExtResource("1_tjsw5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -8.0
+offset_top = -28.0
+offset_right = 8.0
+offset_bottom = 4.0
+texture = SubResource("AtlasTexture_xx7gp")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, -5, 0, -5, -22, -3, -25, 3, -25, 5, -22, 5, 0)
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("3_wt1q6")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+script = ExtResource("4_e2alp")
+
+[node name="AnchorPoint2" type="Node2D" parent="AnchorBase"]
+position = Vector2(-5, -3)
+script = ExtResource("4_e2alp")
+
+[node name="AnchorPoint3" type="Node2D" parent="AnchorBase"]
+position = Vector2(5, -3)
+script = ExtResource("4_e2alp")
+
+[node name="ConnectionBase" type="Node2D" parent="."]
+script = ExtResource("5_gmaqi")
+
+[node name="CP_00" parent="ConnectionBase" instance=ExtResource("6_23ha3")]
+
+[node name="CP_01" parent="ConnectionBase" instance=ExtResource("6_23ha3")]
+position = Vector2(-5, -3)
+
+[node name="CP_02" parent="ConnectionBase" instance=ExtResource("6_23ha3")]
+position = Vector2(5, -3)

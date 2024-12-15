@@ -18,12 +18,17 @@ signal connection_point_mouse_exited()
 #func _process(delta: float) -> void:
 	#pass
 
+#func _input(event: InputEvent) -> void:
+	##if event.is_action_pressed()
+	#pass
 
 func _on_mouse_entered() -> void:
+	print("Mouse Entered : ", self.name)
 	connection_point_mouse_entered.emit(self)
 	pass # Replace with function body.
 
 
 func _on_mouse_exited() -> void:
+	print("Mouse Exited : ", self.name)
 	connection_point_mouse_exited.emit()
 	pass # Replace with function body.

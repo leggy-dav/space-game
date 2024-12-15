@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://c64voe0kf1dc1"]
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://c64voe0kf1dc1"]
 
 [ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_7mkcs"]
 [ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_yo8do"]
+[ext_resource type="PackedScene" uid="uid://c2gl4x2y72gon" path="res://ShipParts/PartsObjs/Cockpits/cockpit_obj_02.tscn" id="2_m54r7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sf25h"]
 atlas = ExtResource("1_yo8do")
@@ -14,3 +15,4 @@ description = ""
 cost = 400.0
 part_type = 0
 icon = SubResource("AtlasTexture_sf25h")
+packed_scene = ExtResource("2_m54r7")
