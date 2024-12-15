@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://c7drsajiryqnd"]
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://c7drsajiryqnd"]
 
 [ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_3l4qk"]
 [ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_rcv4x"]
+[ext_resource type="PackedScene" uid="uid://dadg1jbvx562u" path="res://ShipParts/PartsObjs/Engines/engine_obj_01.tscn" id="2_j6yio"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6app1"]
 atlas = ExtResource("1_3l4qk")
@@ -12,5 +13,6 @@ script = ExtResource("1_rcv4x")
 name = "Omni Thruster Gen7"
 description = ""
 cost = 2000.0
-part_type = 0
+part_type = 2
 icon = SubResource("AtlasTexture_6app1")
+packed_scene = ExtResource("2_j6yio")

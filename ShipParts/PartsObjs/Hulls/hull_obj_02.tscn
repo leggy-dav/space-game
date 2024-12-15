@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://c37levhbujugi"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/hull_part.gd" id="1_erq8k"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_vt84s"]
+[ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="3_m5oev"]
+[ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="4_s1u31"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1yga"]
+atlas = ExtResource("2_vt84s")
+region = Rect2(176, 0, 32, 32)
+
+[node name="HullObj02" type="Area2D"]
+script = ExtResource("1_erq8k")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_r1yga")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 14, -2, 16, -7, 16, -11, 14, -11, 9, -14, 9, -16, 7, -16, -4, -8, -11, -6, -16, -2, -16, -1, -14, 1, -14, 2, -16, 6, -16, 8, -11, 16, -4, 16, 7, 14, 9, 11, 9, 11, 14, 7, 16, 2, 16)
+
+[node name="ConnectionBase" type="Node2D" parent="."]
+script = ExtResource("3_m5oev")
+
+[node name="CP_00" parent="ConnectionBase" instance=ExtResource("4_s1u31")]
+position = Vector2(0, -14)
+exclude_engine = true
+
+[node name="CP_01" parent="ConnectionBase" instance=ExtResource("4_s1u31")]
+position = Vector2(16, 2)
+exclude_cockpit = true
+exclude_engine = true
+
+[node name="CP_02" parent="ConnectionBase" instance=ExtResource("4_s1u31")]
+position = Vector2(0, 14)
+exclude_cockpit = true
+exclude_engine = true
+exclude_weapon = true
+
+[node name="CP_03" parent="ConnectionBase" instance=ExtResource("4_s1u31")]
+position = Vector2(-5, 16)
+exclude_cockpit = true
+exclude_weapon = true
+
+[node name="CP_04" parent="ConnectionBase" instance=ExtResource("4_s1u31")]
+position = Vector2(5, 16)
+exclude_cockpit = true
+exclude_weapon = true
+
+[node name="CP_05" parent="ConnectionBase" instance=ExtResource("4_s1u31")]
+position = Vector2(-16, 2)
+exclude_cockpit = true
+exclude_engine = true
+
+[node name="CP_06" parent="ConnectionBase" instance=ExtResource("4_s1u31")]
+position = Vector2(14, 9)
+exclude_cockpit = true
+exclude_weapon = true
+
+[node name="CP_07" parent="ConnectionBase" instance=ExtResource("4_s1u31")]
+position = Vector2(-14, 9)
+exclude_cockpit = true
+exclude_weapon = true

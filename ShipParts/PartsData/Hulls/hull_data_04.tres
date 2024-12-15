@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://ir8rxu50yhgg"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_o25nh"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_yghjk"]
+[ext_resource type="PackedScene" uid="uid://dhkw2aul4bld3" path="res://ShipParts/PartsObjs/Hulls/hull_obj_04.tscn" id="2_2v46c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq757"]
+atlas = ExtResource("1_yghjk")
+region = Rect2(224, 0, 16, 32)
+
+[resource]
+script = ExtResource("1_o25nh")
+name = "Hull TBD 04"
+description = ""
+cost = 1000.0
+part_type = 1
+icon = SubResource("AtlasTexture_vq757")
+packed_scene = ExtResource("2_2v46c")

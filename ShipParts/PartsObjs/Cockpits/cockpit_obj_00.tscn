@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d3q3umbuxe7jf"]
 
-[ext_resource type="Script" path="res://ShipParts/PartsObjs/cockpit_part.gd" id="1_5jj0a"]
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/cockpit_part.gd" id="1_5jj0a"]
 [ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_gu50x"]
 [ext_resource type="PackedScene" uid="uid://bhd1d4a744owp" path="res://Misc/Anchor/anchor_base.tscn" id="3_o82b1"]
 [ext_resource type="PackedScene" uid="uid://bra30cm2bhqlk" path="res://Misc/Anchor/AP_00.tscn" id="4_t3rh8"]

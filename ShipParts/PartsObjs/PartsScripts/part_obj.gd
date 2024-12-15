@@ -1,18 +1,17 @@
 extends Area2D
 
-class_name CockpitPart
+class_name PartObject
 
-@onready var collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
-
-
-# Called when the node enters the scene tree for the first time.
+## Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
 	#pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+#
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#pass
+
+
 
 func get_connection_base() -> ConnectionBase:
 	for child in get_children():
