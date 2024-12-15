@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://bawtfca5ovso2"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_5d8ns"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_dvc1f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfh8m"]
+atlas = ExtResource("1_dvc1f")
+region = Rect2(16, 0, 16, 32)
+
+[resource]
+script = ExtResource("1_5d8ns")
+name = "Omni Crewpit 01"
+description = ""
+cost = 600.0
+part_type = 0
+icon = SubResource("AtlasTexture_vfh8m")
