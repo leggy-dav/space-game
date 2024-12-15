@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="space-game_0.1"
+config/name="Space_Game_0.1"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="space-game_0.1"
+project/assembly_name="Space_Game_0.1"
