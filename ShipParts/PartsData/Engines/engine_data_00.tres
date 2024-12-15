@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=2 format=3 uid="uid://dpaphnjfl3kon"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_4ruvw"]
+
+[resource]
+script = ExtResource("1_4ruvw")
+name = "Omni Thruster Gen3"
+description = ""
+cost = 0.0
+part_type = 0

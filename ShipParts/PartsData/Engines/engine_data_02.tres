@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://diupdssl2o5kd"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_efrr2"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_jd7m5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8ppl"]
+atlas = ExtResource("1_jd7m5")
+region = Rect2(32, 80, 16, 16)
+
+[resource]
+script = ExtResource("1_efrr2")
+name = "Pop Jet"
+description = ""
+cost = 200.0
+part_type = 0
+icon = SubResource("AtlasTexture_j8ppl")

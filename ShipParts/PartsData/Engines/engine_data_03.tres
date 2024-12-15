@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=4 format=3 uid="uid://dfdki2ry6e5t7"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_ciojh"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_kykfh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3uyi"]
+atlas = ExtResource("1_ciojh")
+region = Rect2(48, 80, 16, 16)
+
+[resource]
+script = ExtResource("1_kykfh")
+name = "Bulks Heavy"
+description = ""
+cost = 4000.0
+part_type = 0
+icon = SubResource("AtlasTexture_d3uyi")
