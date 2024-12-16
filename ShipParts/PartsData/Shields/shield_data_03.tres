@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://ck666fbq54fad"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_ibdsm"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_vtrac"]
+[ext_resource type="PackedScene" uid="uid://bmlqdx25bwsix" path="res://ShipParts/PartsObjs/Shields/shield_obj_03.tscn" id="2_81lde"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jmtw"]
+atlas = ExtResource("1_vtrac")
+region = Rect2(272, 96, 16, 16)
+
+[resource]
+script = ExtResource("1_ibdsm")
+part_id = "sh03"
+name = "Plasma Blocker Mk7"
+description = "Powerful plasma field generator which repels plasma projectiles, disintegrates astroieds and space debre."
+cost = 1200.0
+part_type = 5
+icon = SubResource("AtlasTexture_1jmtw")
+packed_scene = ExtResource("2_81lde")

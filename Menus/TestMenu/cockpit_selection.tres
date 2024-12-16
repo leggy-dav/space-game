@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ShipPartList" load_steps=14 format=3 uid="uid://bm4gj8jdtfs51"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_howdh"]
+[ext_resource type="Script" path="res://Menus/ship_part_list.gd" id="2_52xby"]
+[ext_resource type="Resource" uid="uid://by6rqwmu0dtpj" path="res://ShipParts/PartsData/Cockpits/cockpit_data_00.tres" id="2_qdgw5"]
+[ext_resource type="Resource" uid="uid://bawtfca5ovso2" path="res://ShipParts/PartsData/Cockpits/cockpit_data_01.tres" id="3_34giy"]
+[ext_resource type="Resource" uid="uid://c64voe0kf1dc1" path="res://ShipParts/PartsData/Cockpits/cockpit_data_02.tres" id="4_0iuiq"]
+[ext_resource type="Resource" uid="uid://drsq7o0rojfdo" path="res://ShipParts/PartsData/Cockpits/cockpit_data_03.tres" id="5_alil2"]
+[ext_resource type="Resource" uid="uid://b3ndniumfjxd8" path="res://ShipParts/PartsData/Cockpits/cockpit_data_04.tres" id="6_uen10"]
+[ext_resource type="Resource" uid="uid://bjvb3n412lcet" path="res://ShipParts/PartsData/Cockpits/cockpit_data_05.tres" id="7_v6a58"]
+[ext_resource type="Resource" uid="uid://cfyacxkqlhyku" path="res://ShipParts/PartsData/Cockpits/cockpit_data_06.tres" id="8_ehjpt"]
+[ext_resource type="Resource" uid="uid://ctudayw2umxko" path="res://ShipParts/PartsData/Cockpits/cockpit_data_07.tres" id="9_qmtva"]
+[ext_resource type="Resource" uid="uid://dc5gfegd0ge6e" path="res://ShipParts/PartsData/Cockpits/cockpit_data_08.tres" id="10_jteul"]
+[ext_resource type="Resource" uid="uid://snt15afljq1r" path="res://ShipParts/PartsData/Cockpits/cockpit_data_09.tres" id="11_tnmqa"]
+[ext_resource type="Resource" uid="uid://dmc84nxmuy1qe" path="res://ShipParts/PartsData/Cockpits/cockpit_data_10.tres" id="12_2jqsv"]
+
+[resource]
+script = ExtResource("2_52xby")
+part_slots = Array[ExtResource("1_howdh")]([ExtResource("2_qdgw5"), ExtResource("3_34giy"), ExtResource("4_0iuiq"), ExtResource("5_alil2"), ExtResource("6_uen10"), ExtResource("7_v6a58"), ExtResource("8_ehjpt"), ExtResource("9_qmtva"), ExtResource("10_jteul"), ExtResource("11_tnmqa"), ExtResource("12_2jqsv")])

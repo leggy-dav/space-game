@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://nn1t4hkjtsv4"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/utility_part.gd" id="1_poo1l"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_53t66"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="3_ypwyw"]
+[ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="4_54mk8"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="4_n4k4g"]
+[ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="6_esmwi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uka7t"]
+atlas = ExtResource("2_53t66")
+region = Rect2(96, 80, 16, 32)
+
+[node name="UtilObj14" type="Area2D"]
+script = ExtResource("1_poo1l")
+part_id = "ut14"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 8.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_uka7t")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(5, 0, 5, 13, 2, 16, -3, 16, -8, 11, -8, -3, -5, -6, 2, -6, 2, -3)
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("3_ypwyw")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(5, 10)
+script = ExtResource("4_n4k4g")
+
+[node name="ConnectionBase" type="Node2D" parent="."]
+script = ExtResource("4_54mk8")
+
+[node name="CP_00" parent="ConnectionBase" instance=ExtResource("6_esmwi")]
+position = Vector2(-1, 16)
+exclude_cockpit = true
+exclude_shield = true
+exclude_weapon = true
+
+[node name="CP_01" parent="ConnectionBase" instance=ExtResource("6_esmwi")]
+position = Vector2(-8, 4)
+exclude_cockpit = true
+exclude_engine = true
+exclude_shield = true
+
+[node name="CP_02" parent="ConnectionBase" instance=ExtResource("6_esmwi")]
+position = Vector2(-2, -6)
+exclude_engine = true
+exclude_shield = true
+exclude_weapon = true
+
+[node name="CP_03" parent="ConnectionBase" instance=ExtResource("6_esmwi")]
+position = Vector2(-2, 5)
+exclude_cockpit = true
+exclude_engine = true
+exclude_utility = true

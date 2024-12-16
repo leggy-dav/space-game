@@ -11,6 +11,7 @@ region = Rect2(224, 0, 16, 32)
 
 [node name="HullObj04" type="Area2D"]
 script = ExtResource("1_3fctc")
+part_id = "hl04"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8

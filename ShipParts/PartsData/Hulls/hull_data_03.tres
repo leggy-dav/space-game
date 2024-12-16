@@ -10,6 +10,7 @@ region = Rect2(208, 0, 16, 32)
 
 [resource]
 script = ExtResource("1_ot4js")
+part_id = "hl03"
 name = "Hull TBD 03"
 description = ""
 cost = 1000.0

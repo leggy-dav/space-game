@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ShipPartList" load_steps=11 format=3 uid="uid://bxmvfbhgu80nn"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_mlk0k"]
+[ext_resource type="Script" path="res://Menus/ship_part_list.gd" id="2_jpfge"]
+[ext_resource type="Resource" uid="uid://d04q56m6vbrik" path="res://ShipParts/PartsData/Hulls/hull_data_03.tres" id="2_mqkq5"]
+[ext_resource type="Resource" uid="uid://ir8rxu50yhgg" path="res://ShipParts/PartsData/Hulls/hull_data_04.tres" id="3_aax8t"]
+[ext_resource type="Resource" uid="uid://cvon17n1xxcs1" path="res://ShipParts/PartsData/Hulls/hull_data_05.tres" id="4_78ns6"]
+[ext_resource type="Resource" uid="uid://c1e3qyydm2ghk" path="res://ShipParts/PartsData/Hulls/hull_data_06.tres" id="5_ohtte"]
+[ext_resource type="Resource" uid="uid://desbfm580nj54" path="res://ShipParts/PartsData/Hulls/hull_data_07.tres" id="6_srlq7"]
+[ext_resource type="Resource" uid="uid://c7v7rg4sw006t" path="res://ShipParts/PartsData/Hulls/hull_data_01.tres" id="7_31sa8"]
+[ext_resource type="Resource" uid="uid://sv2w5i581slp" path="res://ShipParts/PartsData/Hulls/hull_data_02.tres" id="8_7tlmr"]
+[ext_resource type="Resource" uid="uid://cpvn8y56t7fse" path="res://ShipParts/PartsData/Hulls/hull_data_00.tres" id="9_i4sx0"]
+
+[resource]
+script = ExtResource("2_jpfge")
+part_slots = Array[ExtResource("1_mlk0k")]([ExtResource("2_mqkq5"), ExtResource("3_aax8t"), ExtResource("4_78ns6"), ExtResource("5_ohtte"), ExtResource("6_srlq7"), ExtResource("7_31sa8"), ExtResource("8_7tlmr"), ExtResource("9_i4sx0")])

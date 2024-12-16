@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://c6yf7th6y820t"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_0jsw7"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_j64yd"]
+[ext_resource type="PackedScene" uid="uid://bm1fioxj2ex1" path="res://ShipParts/PartsObjs/Weapons/weapon_obj_02.tscn" id="2_f24gh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tcq3"]
+atlas = ExtResource("1_j64yd")
+region = Rect2(48, 128, 16, 16)
+
+[resource]
+script = ExtResource("1_0jsw7")
+part_id = "wp02"
+name = "Plasma Cannon mk1"
+description = "Plasma cannon created by Omni Industrial. The design of this advanced weapon was reverse engineered from alien technologies."
+cost = 10000.0
+part_type = 4
+icon = SubResource("AtlasTexture_4tcq3")
+packed_scene = ExtResource("2_f24gh")

@@ -10,6 +10,7 @@ region = Rect2(16, 0, 16, 32)
 
 [resource]
 script = ExtResource("1_5d8ns")
+part_id = "cp01"
 name = "Omni Crewpit 01"
 description = ""
 cost = 800.0

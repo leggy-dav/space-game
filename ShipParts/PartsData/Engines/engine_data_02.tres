@@ -10,6 +10,7 @@ region = Rect2(32, 80, 16, 16)
 
 [resource]
 script = ExtResource("1_efrr2")
+part_id = "eng02"
 name = "Pop Jet"
 description = ""
 cost = 200.0

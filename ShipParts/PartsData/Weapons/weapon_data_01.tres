@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://qyhwcyt6hoj2"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_ek4vi"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_jqj6e"]
+[ext_resource type="PackedScene" uid="uid://dro3vbe8etb6f" path="res://ShipParts/PartsObjs/Weapons/weapon_obj_01.tscn" id="2_0nhql"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvy6p"]
+atlas = ExtResource("1_ek4vi")
+region = Rect2(32, 112, 16, 32)
+
+[resource]
+script = ExtResource("1_jqj6e")
+part_id = "wp01"
+name = "Heavy Cannon"
+description = "Ballistic cannon which fires a single heavy slug."
+cost = 650.0
+part_type = 4
+icon = SubResource("AtlasTexture_kvy6p")
+packed_scene = ExtResource("2_0nhql")

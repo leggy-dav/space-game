@@ -13,6 +13,7 @@ region = Rect2(48, 32, 16, 32)
 
 [node name="CockpitObj09" type="Area2D"]
 script = ExtResource("1_tjsw5")
+part_id = "cp09"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -8.0

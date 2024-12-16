@@ -10,6 +10,7 @@ region = Rect2(32, 32, 16, 32)
 
 [resource]
 script = ExtResource("1_mxacb")
+part_id = "cp08"
 name = "Alien Control 02"
 description = ""
 cost = 6400.0

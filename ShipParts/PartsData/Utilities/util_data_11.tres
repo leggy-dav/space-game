@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://c6mvsfrbgp04q"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_2ulpu"]
+[ext_resource type="PackedScene" uid="uid://b5j2j5byn7nyf" path="res://ShipParts/PartsObjs/Utilities/util_obj_11.tscn" id="2_b6bpk"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="2_vtmod"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80wdi"]
+atlas = ExtResource("1_2ulpu")
+region = Rect2(96, 144, 16, 32)
+
+[resource]
+script = ExtResource("2_vtmod")
+part_id = "ut11"
+name = "Side Fitting U0"
+description = ""
+cost = 0.0
+part_type = 3
+icon = SubResource("AtlasTexture_80wdi")
+packed_scene = ExtResource("2_b6bpk")

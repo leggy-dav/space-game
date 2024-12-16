@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShipPartList" load_steps=7 format=3 uid="uid://bc5ekl4grv7g2"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_acdb2"]
+[ext_resource type="Script" path="res://Menus/ship_part_list.gd" id="2_bucb8"]
+[ext_resource type="Resource" uid="uid://diupdssl2o5kd" path="res://ShipParts/PartsData/Engines/engine_data_02.tres" id="2_ioctd"]
+[ext_resource type="Resource" uid="uid://dpaphnjfl3kon" path="res://ShipParts/PartsData/Engines/engine_data_00.tres" id="3_gtc8k"]
+[ext_resource type="Resource" uid="uid://c7drsajiryqnd" path="res://ShipParts/PartsData/Engines/engine_data_01.tres" id="4_178ib"]
+[ext_resource type="Resource" uid="uid://dfdki2ry6e5t7" path="res://ShipParts/PartsData/Engines/engine_data_03.tres" id="5_xticc"]
+
+[resource]
+script = ExtResource("2_bucb8")
+part_slots = Array[ExtResource("1_acdb2")]([ExtResource("2_ioctd"), ExtResource("3_gtc8k"), ExtResource("4_178ib"), ExtResource("5_xticc")])

@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://cap0kyyhnosv7"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/utility_part.gd" id="1_7j6ux"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_liief"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="3_6lua5"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="4_bhgtg"]
+[ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="4_r8qvg"]
+[ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="6_tm0qr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uka7t"]
+atlas = ExtResource("2_liief")
+region = Rect2(144, 64, 16, 16)
+
+[node name="UtilObj03" type="Area2D"]
+script = ExtResource("1_7j6ux")
+part_id = "ut03"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+texture = SubResource("AtlasTexture_uka7t")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(5, 4, -5, 4, -5, -4, 5, -4)
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("3_6lua5")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(-5, 0)
+script = ExtResource("4_bhgtg")
+
+[node name="AnchorPoint2" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, -4)
+script = ExtResource("4_bhgtg")
+
+[node name="AnchorPoint3" type="Node2D" parent="AnchorBase"]
+position = Vector2(5, 0)
+script = ExtResource("4_bhgtg")
+
+[node name="AnchorPoint4" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, 4)
+script = ExtResource("4_bhgtg")
+
+[node name="ConnectionBase" type="Node2D" parent="."]
+script = ExtResource("4_r8qvg")
+
+[node name="CP_00" parent="ConnectionBase" instance=ExtResource("6_tm0qr")]
+position = Vector2(-5, 0)
+
+[node name="CP_01" parent="ConnectionBase" instance=ExtResource("6_tm0qr")]
+position = Vector2(0, -4)
+
+[node name="CP_02" parent="ConnectionBase" instance=ExtResource("6_tm0qr")]
+position = Vector2(5, 0)
+
+[node name="CP_03" parent="ConnectionBase" instance=ExtResource("6_tm0qr")]
+position = Vector2(0, 4)

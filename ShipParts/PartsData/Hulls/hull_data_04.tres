@@ -10,6 +10,7 @@ region = Rect2(224, 0, 16, 32)
 
 [resource]
 script = ExtResource("1_o25nh")
+part_id = "hl04"
 name = "Hull TBD 04"
 description = ""
 cost = 1000.0

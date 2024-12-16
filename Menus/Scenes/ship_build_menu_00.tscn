@@ -1,0 +1,222 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4mq0md77sau4"]
+
+[ext_resource type="Script" path="res://Menus/Scenes/ship_build_menu.gd" id="1_vepcl"]
+[ext_resource type="PackedScene" uid="uid://28q3cebi4vug" path="res://Menus/Scenes/PartsSelection_00.tscn" id="2_23otm"]
+[ext_resource type="Texture2D" uid="uid://74bls02ta05j" path="res://Images/Background_Grid_00.png" id="2_tchnt"]
+[ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="4_ent3r"]
+
+[node name="ShipBuildMenu-00" type="Node2D"]
+script = ExtResource("1_vepcl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 1172.0
+offset_bottom = 672.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+texture = ExtResource("2_tchnt")
+metadata/_edit_lock_ = true
+
+[node name="PartsSelection00" parent="." instance=ExtResource("2_23otm")]
+offset_left = 3.0
+offset_top = 135.0
+offset_right = 3.0
+offset_bottom = 135.0
+
+[node name="MenuHeader" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 109.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuHeader"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 109.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuHeader/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuHeader/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 8
+
+[node name="ExitButton" type="Button" parent="MenuHeader/MarginContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 42)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+text = "Exit"
+
+[node name="SaveButton" type="Button" parent="MenuHeader/MarginContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 42)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+text = "Save"
+
+[node name="ClearButton" type="Button" parent="MenuHeader/MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Clear"
+
+[node name="ShipNameLineEdit" type="LineEdit" parent="MenuHeader/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+placeholder_text = "Ship Name"
+
+[node name="CostLabel" type="Label" parent="MenuHeader/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 32
+text = "$0000.00"
+
+[node name="BuildArea" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 288.0
+offset_top = 136.0
+offset_right = 916.0
+offset_bottom = 620.0
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="BuildArea"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShipAnchorPoint" parent="BuildArea" instance=ExtResource("4_ent3r")]
+position = Vector2(314, 250)
+scale = Vector2(10, 10)
+
+[node name="HelpView" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 942.0
+offset_top = 405.0
+offset_right = 1152.0
+offset_bottom = 634.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HelpView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HelpView/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpView/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ClickLabel" type="Label" parent="HelpView/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+text = "L-Click - place selected part"
+
+[node name="ESCLabel" type="Label" parent="HelpView/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+text = "ESC - remove selected part"
+
+[node name="RotateLabel" type="Label" parent="HelpView/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+text = "R  -  rotate selected part"
+
+[node name="AnchorLabel" type="Label" parent="HelpView/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+text = "T  -  change anchor point"
+
+[node name="FlipXLabel" type="Label" parent="HelpView/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+text = "X  - flip part along x-axis"
+
+[node name="FlipYLabel" type="Label" parent="HelpView/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+text = "Y  - flip part along y-axis"
+
+[node name="ClearLabel" type="Label" parent="HelpView/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+text = "Clear - clear current build"
+
+[node name="SaveLabel" type="Label" parent="HelpView/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+text = "Save - save current ship"
+
+[node name="ExitLabel" type="Label" parent="HelpView/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 14
+text = "Exit - leave ship builder"
+
+[connection signal="pressed" from="MenuHeader/MarginContainer/HBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MenuHeader/MarginContainer/HBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="text_changed" from="MenuHeader/MarginContainer/HBoxContainer/ShipNameLineEdit" to="." method="_on_ship_name_line_edit_text_changed"]

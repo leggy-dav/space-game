@@ -10,6 +10,7 @@ region = Rect2(0, 80, 16, 16)
 
 [resource]
 script = ExtResource("1_4ruvw")
+part_id = "eng00"
 name = "Omni Thruster Gen3"
 description = ""
 cost = 1000.0

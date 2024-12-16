@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ShipPartList" load_steps=21 format=3 uid="uid://c4a2wclukym3m"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_5absy"]
+[ext_resource type="Script" path="res://Menus/ship_part_list.gd" id="2_07t11"]
+[ext_resource type="Resource" uid="uid://56p85ryiy5af" path="res://ShipParts/PartsData/Utilities/util_data_00.tres" id="2_uxaap"]
+[ext_resource type="Resource" uid="uid://bbbmkdp4simhl" path="res://ShipParts/PartsData/Utilities/util_data_01.tres" id="3_fcbgx"]
+[ext_resource type="Resource" uid="uid://bywwq84i4wb7e" path="res://ShipParts/PartsData/Utilities/util_data_02.tres" id="4_yaarc"]
+[ext_resource type="Resource" uid="uid://bondiltkjl4tr" path="res://ShipParts/PartsData/Utilities/util_data_03.tres" id="5_brfvj"]
+[ext_resource type="Resource" uid="uid://bjfux6v0xvp5x" path="res://ShipParts/PartsData/Utilities/util_data_04.tres" id="6_pi16y"]
+[ext_resource type="Resource" uid="uid://gcpum0384jo8" path="res://ShipParts/PartsData/Utilities/util_data_05.tres" id="7_6bb1o"]
+[ext_resource type="Resource" uid="uid://bp4l0h3pgsw5x" path="res://ShipParts/PartsData/Utilities/util_data_06.tres" id="8_ddq86"]
+[ext_resource type="Resource" uid="uid://jk5yundx6u8x" path="res://ShipParts/PartsData/Utilities/util_data_07.tres" id="9_7popk"]
+[ext_resource type="Resource" uid="uid://f4p2f37e1kxy" path="res://ShipParts/PartsData/Utilities/util_data_08.tres" id="10_iv5da"]
+[ext_resource type="Resource" uid="uid://dcnwh4fdo3ruw" path="res://ShipParts/PartsData/Utilities/util_data_09.tres" id="11_ajg84"]
+[ext_resource type="Resource" uid="uid://b04idqruyv42d" path="res://ShipParts/PartsData/Utilities/util_data_10.tres" id="12_plwaj"]
+[ext_resource type="Resource" uid="uid://c6mvsfrbgp04q" path="res://ShipParts/PartsData/Utilities/util_data_11.tres" id="13_k5yh8"]
+[ext_resource type="Resource" uid="uid://br1ka14m70sn2" path="res://ShipParts/PartsData/Utilities/util_data_12.tres" id="14_gfkt8"]
+[ext_resource type="Resource" uid="uid://cuw5h18h1q2qf" path="res://ShipParts/PartsData/Utilities/util_data_13.tres" id="15_ta8bh"]
+[ext_resource type="Resource" uid="uid://b8v6go7lrd64y" path="res://ShipParts/PartsData/Utilities/util_data_14.tres" id="16_v41vg"]
+[ext_resource type="Resource" uid="uid://be3w0qwwx5qgf" path="res://ShipParts/PartsData/Utilities/util_data_15.tres" id="17_ivetd"]
+[ext_resource type="Resource" uid="uid://buynytk24ots8" path="res://ShipParts/PartsData/Utilities/util_data_16.tres" id="18_fxecd"]
+[ext_resource type="Resource" uid="uid://dw01ddensqakh" path="res://ShipParts/PartsData/Utilities/util_data_17.tres" id="19_vhw6q"]
+
+[resource]
+script = ExtResource("2_07t11")
+part_slots = Array[ExtResource("1_5absy")]([ExtResource("2_uxaap"), ExtResource("3_fcbgx"), ExtResource("4_yaarc"), ExtResource("5_brfvj"), ExtResource("6_pi16y"), ExtResource("7_6bb1o"), ExtResource("8_ddq86"), ExtResource("9_7popk"), ExtResource("10_iv5da"), ExtResource("11_ajg84"), ExtResource("12_plwaj"), ExtResource("13_k5yh8"), ExtResource("14_gfkt8"), ExtResource("15_ta8bh"), ExtResource("16_v41vg"), ExtResource("17_ivetd"), ExtResource("18_fxecd"), ExtResource("19_vhw6q")])

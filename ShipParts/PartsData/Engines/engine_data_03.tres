@@ -10,6 +10,7 @@ region = Rect2(48, 80, 16, 16)
 
 [resource]
 script = ExtResource("1_kykfh")
+part_id = "eng03"
 name = "Bulks Heavy"
 description = ""
 cost = 4000.0

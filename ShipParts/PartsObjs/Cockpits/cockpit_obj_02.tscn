@@ -11,6 +11,7 @@ region = Rect2(32, 0, 16, 32)
 
 [node name="CockpitObj02" type="Area2D"]
 script = ExtResource("1_wptq1")
+part_id = "cp02"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -8.0
