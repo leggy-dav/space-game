@@ -22,7 +22,7 @@ var parts_selection_menu: PartsSelectControl
 
 
 # signals
-signal clear_held_part()
+#signal clear_held_part()
 
 
 func _ready() -> void:
@@ -31,7 +31,7 @@ func _ready() -> void:
 	pass
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	move_grabbed_part()
 
 
@@ -112,7 +112,7 @@ func _on_save_button_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_ship_name_line_edit_text_changed(new_text: String) -> void:
+func _on_ship_name_line_edit_text_changed(_new_text: String) -> void:
 	#print("Ship Name : ", new_text)
 	pass # Replace with function body.
 

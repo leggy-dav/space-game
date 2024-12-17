@@ -30,7 +30,6 @@ func get_current_anchor():
 	for child in get_children(true):
 		if child is AnchorBase:
 			return child.get_curr_anchor()
-			pass
 	return null
 
 
