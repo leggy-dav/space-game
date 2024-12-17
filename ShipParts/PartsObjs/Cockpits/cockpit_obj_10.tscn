@@ -31,14 +31,15 @@ polygon = PackedVector2Array(0, 0, -5, 0, -5, -19, -3, -21, 3, -21, 5, -19, 5, 0
 script = ExtResource("3_g56wt")
 
 [node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, -2)
 script = ExtResource("4_t5ywq")
 
 [node name="AnchorPoint2" type="Node2D" parent="AnchorBase"]
-position = Vector2(-5, -3)
+position = Vector2(-4, -3)
 script = ExtResource("4_t5ywq")
 
 [node name="AnchorPoint3" type="Node2D" parent="AnchorBase"]
-position = Vector2(5, -3)
+position = Vector2(4, -3)
 script = ExtResource("4_t5ywq")
 
 [node name="ConnectionBase" type="Node2D" parent="."]

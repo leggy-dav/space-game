@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://elh5wti4fkcs"]
+[gd_scene load_steps=8 format=3 uid="uid://elh5wti4fkcs"]
 
 [ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/hull_part.gd" id="1_jqfgs"]
 [ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_xwko4"]
 [ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="3_6055r"]
 [ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="4_4n5wq"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="5_t21ek"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="6_jglje"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjnox"]
 atlas = ExtResource("2_xwko4")
@@ -42,12 +44,12 @@ exclude_shield = true
 exclude_weapon = true
 
 [node name="CP_01" parent="ConnectionBase" instance=ExtResource("4_4n5wq")]
-position = Vector2(6, 4)
+position = Vector2(6, 5)
 exclude_cockpit = true
 exclude_engine = true
 
 [node name="CP_02" parent="ConnectionBase" instance=ExtResource("4_4n5wq")]
-position = Vector2(-6, 4)
+position = Vector2(-6, 5)
 exclude_cockpit = true
 exclude_engine = true
 
@@ -56,3 +58,22 @@ position = Vector2(0, 13)
 exclude_cockpit = true
 exclude_shield = true
 exclude_weapon = true
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("5_t21ek")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, -11)
+script = ExtResource("6_jglje")
+
+[node name="AnchorPoint2" type="Node2D" parent="AnchorBase"]
+position = Vector2(5, 5)
+script = ExtResource("6_jglje")
+
+[node name="AnchorPoint3" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, 12)
+script = ExtResource("6_jglje")
+
+[node name="AnchorPoint4" type="Node2D" parent="AnchorBase"]
+position = Vector2(-5, 5)
+script = ExtResource("6_jglje")

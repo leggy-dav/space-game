@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccxu8mq4kcvsn"]
+[gd_scene load_steps=8 format=3 uid="uid://ccxu8mq4kcvsn"]
 
 [ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/hull_part.gd" id="1_bwoq0"]
 [ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_vt0y0"]
 [ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="3_gnxqp"]
 [ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="4_1r2dh"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="5_kg0sp"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="6_mvlsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nk1ef"]
 atlas = ExtResource("2_vt0y0")
@@ -14,17 +16,10 @@ script = ExtResource("1_bwoq0")
 part_id = "hl05"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -8.0
 offset_top = -16.0
 offset_right = 8.0
 offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
 texture = SubResource("AtlasTexture_nk1ef")
 expand_mode = 1
 stretch_mode = 2
@@ -42,13 +37,13 @@ exclude_shield = true
 exclude_weapon = true
 
 [node name="CP_01" parent="ConnectionBase" instance=ExtResource("4_1r2dh")]
-position = Vector2(5, 2)
+position = Vector2(5, 3)
 exclude_cockpit = true
 exclude_engine = true
 exclude_shield = true
 
 [node name="CP_02" parent="ConnectionBase" instance=ExtResource("4_1r2dh")]
-position = Vector2(-5, 2)
+position = Vector2(-5, 3)
 exclude_cockpit = true
 exclude_engine = true
 exclude_shield = true
@@ -64,3 +59,22 @@ position = Vector2(0, 13)
 exclude_cockpit = true
 exclude_shield = true
 exclude_weapon = true
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("5_kg0sp")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, -13)
+script = ExtResource("6_mvlsp")
+
+[node name="AnchorPoint2" type="Node2D" parent="AnchorBase"]
+position = Vector2(4, 3)
+script = ExtResource("6_mvlsp")
+
+[node name="AnchorPoint3" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, 13)
+script = ExtResource("6_mvlsp")
+
+[node name="AnchorPoint4" type="Node2D" parent="AnchorBase"]
+position = Vector2(-4, 3)
+script = ExtResource("6_mvlsp")

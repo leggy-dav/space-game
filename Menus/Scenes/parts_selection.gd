@@ -14,21 +14,21 @@ const PART_SLOT = preload("res://Menus/part_slot.tscn")
 @export var ship_part_weapons: ShipPartList
 @export var ship_part_sheilds: ShipPartList
 
-var grabbed_part_data: PartData
+var selected_part_data: PartData
 
-signal pickup_part(part_data: PartData)
-
+#signal pickup_part(part_data: PartData)
+signal ship_part_selected(part_data: PartData)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# ship_part_list_interact
-	#ship_part_cockpits.ship_part_list_interact.connect()
-	#ship_part_hulls
-	#ship_part_engines
-	#ship_part_utilites
-	#ship_part_weapons
-	#ship_part_sheilds
-	pass # Replace with function body.
+	
+	populate_grid_container(ship_part_hulls)
+	ship_part_cockpits.ship_part_list_interact.connect(on_ship_part_list_interact)
+	ship_part_hulls.ship_part_list_interact.connect(on_ship_part_list_interact)
+	ship_part_engines.ship_part_list_interact.connect(on_ship_part_list_interact)
+	ship_part_utilites.ship_part_list_interact.connect(on_ship_part_list_interact)
+	ship_part_weapons.ship_part_list_interact.connect(on_ship_part_list_interact)
+	ship_part_sheilds.ship_part_list_interact.connect(on_ship_part_list_interact)
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,18 +52,20 @@ func populate_grid_container(ship_parts: ShipPartList) -> void:
 			new_slot.set_part_info(item_data)
 			new_slot.slot_clicked.connect(ship_parts.on_slot_clicked)
 
+
 func on_ship_part_list_interact(_ship_part_list: ShipPartList, index: int, button_index: int):
 	# get part from ship part list
 	# inform a parent scene that this part has been grabed so what needs to 
 	# be done can be done
 	
-	match [grabbed_part_data, button_index]:
+	match [selected_part_data, button_index]:
 		[_, MOUSE_BUTTON_LEFT]:
-			grabbed_part_data = _ship_part_list.get_slot_data(index)
+			selected_part_data = _ship_part_list.get_slot_data(index)
 			
-			#if grabbed_part_data.is_hull():
+			ship_part_selected.emit(selected_part_data)
+			#if selected_part_data.is_hull():
 				#pass
-			
+
 
 func _on_hulls_button_pressed() -> void:
 	populate_grid_container(ship_part_hulls)

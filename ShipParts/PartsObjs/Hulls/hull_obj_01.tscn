@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0wpfa7vpb0oy"]
+[gd_scene load_steps=8 format=3 uid="uid://c0wpfa7vpb0oy"]
 
 [ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/hull_part.gd" id="1_3g36j"]
 [ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_v6c0w"]
 [ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="3_pibpv"]
 [ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="4_hbykt"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="5_iu68o"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="6_767x5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5dhaw"]
 atlas = ExtResource("2_v6c0w")
@@ -79,3 +81,22 @@ exclude_engine = true
 position = Vector2(5, -16)
 exclude_cockpit = true
 exclude_engine = true
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("5_iu68o")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, -13)
+script = ExtResource("6_767x5")
+
+[node name="AnchorPoint2" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, 13)
+script = ExtResource("6_767x5")
+
+[node name="AnchorPoint3" type="Node2D" parent="AnchorBase"]
+position = Vector2(-6, 14)
+script = ExtResource("6_767x5")
+
+[node name="AnchorPoint4" type="Node2D" parent="AnchorBase"]
+position = Vector2(6, 14)
+script = ExtResource("6_767x5")

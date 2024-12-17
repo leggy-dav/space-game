@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dla4tvkuiajv0"]
+[gd_scene load_steps=8 format=3 uid="uid://dla4tvkuiajv0"]
 
 [ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/hull_part.gd" id="1_db2ej"]
 [ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_rekoj"]
 [ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="3_6ttcg"]
 [ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="4_v4yjt"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="5_5rnig"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="6_1nmd1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t35n"]
 atlas = ExtResource("2_rekoj")
@@ -81,3 +83,14 @@ exclude_engine = true
 [node name="CP_09" parent="ConnectionBase" instance=ExtResource("4_v4yjt")]
 position = Vector2(5, -16)
 exclude_engine = true
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("5_5rnig")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, -13)
+script = ExtResource("6_1nmd1")
+
+[node name="AnchorPoint2" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, 14)
+script = ExtResource("6_1nmd1")

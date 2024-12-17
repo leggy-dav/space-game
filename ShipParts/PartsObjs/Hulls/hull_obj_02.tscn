@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c37levhbujugi"]
+[gd_scene load_steps=8 format=3 uid="uid://c37levhbujugi"]
 
 [ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/hull_part.gd" id="1_erq8k"]
 [ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_vt84s"]
 [ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="3_m5oev"]
 [ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="4_s1u31"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="5_g4ynn"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="6_wdn5v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1yga"]
 atlas = ExtResource("2_vt84s")
@@ -74,3 +76,22 @@ exclude_weapon = true
 position = Vector2(-14, 9)
 exclude_cockpit = true
 exclude_weapon = true
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("5_g4ynn")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, -13)
+script = ExtResource("6_wdn5v")
+
+[node name="AnchorPoint2" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, 13)
+script = ExtResource("6_wdn5v")
+
+[node name="AnchorPoint3" type="Node2D" parent="AnchorBase"]
+position = Vector2(-12, 8)
+script = ExtResource("6_wdn5v")
+
+[node name="AnchorPoint4" type="Node2D" parent="AnchorBase"]
+position = Vector2(12, 8)
+script = ExtResource("6_wdn5v")

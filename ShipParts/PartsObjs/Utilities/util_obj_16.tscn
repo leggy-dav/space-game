@@ -23,15 +23,17 @@ offset_bottom = 8.0
 texture = SubResource("AtlasTexture_uka7t")
 expand_mode = 1
 stretch_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(8, 8, -6, 8, -6, -5, -4, -5, 1, 0, 4, 0, 8, 4)
+metadata/_edit_lock_ = true
 
 [node name="AnchorBase" type="Node2D" parent="."]
 script = ExtResource("3_wcpix")
 
 [node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
-position = Vector2(-6, 1)
+position = Vector2(-4, 1)
 script = ExtResource("4_ffqh0")
 
 [node name="ConnectionBase" type="Node2D" parent="."]

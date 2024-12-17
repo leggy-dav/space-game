@@ -221,5 +221,3 @@ text = "Exit - leave ship builder"
 [connection signal="pressed" from="MenuHeader/MarginContainer/HBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="MenuHeader/MarginContainer/HBoxContainer/HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
 [connection signal="text_changed" from="MenuHeader/MarginContainer/HBoxContainer/ShipNameLineEdit" to="." method="_on_ship_name_line_edit_text_changed"]
-[connection signal="mouse_entered" from="BuildArea" to="." method="_on_build_area_mouse_entered"]
-[connection signal="mouse_exited" from="BuildArea" to="." method="_on_build_area_mouse_exited"]

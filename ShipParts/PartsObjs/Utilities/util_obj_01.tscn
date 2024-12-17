@@ -31,6 +31,7 @@ polygon = PackedVector2Array(8, 4, -8, 4, -8, -4, 8, -4)
 script = ExtResource("3_1pgvu")
 
 [node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(-8, 0)
 script = ExtResource("4_qx4xa")
 
 [node name="AnchorPoint2" type="Node2D" parent="AnchorBase"]
@@ -38,6 +39,7 @@ position = Vector2(8, 0)
 script = ExtResource("4_qx4xa")
 
 [node name="ConnectionBase" type="Node2D" parent="."]
+visible = false
 position = Vector2(-8, 0)
 script = ExtResource("4_x0lmq")
 

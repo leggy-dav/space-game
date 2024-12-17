@@ -38,5 +38,6 @@ func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton \
 			and (event.button_index == MOUSE_BUTTON_LEFT) \
 			and event.is_pressed():
+		#print('Clicked Slot : ', self.name, "\t", get_index(), "\t", event.button_index)
 		slot_clicked.emit(get_index(), event.button_index)
 	pass # Replace with function body.

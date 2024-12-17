@@ -29,4 +29,5 @@ polygon = PackedVector2Array(0, 0, -5, 0, -5, -18, -3, -21, 3, -21, 5, -18, 5, 0
 script = ExtResource("3_6ucvg")
 
 [node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, -3)
 script = ExtResource("4_jjgmm")

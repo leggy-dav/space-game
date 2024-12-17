@@ -12,7 +12,9 @@ class_name ConnectionPoint
 
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var texture_rect: TextureRect = $TextureRect
 
+#var active: bool = true
 
 signal connection_point_mouse_entered(Area2D)
 signal connection_point_mouse_exited()
@@ -62,6 +64,26 @@ func set_active_based_on_part(obj) -> void:
 			self.hide()
 		else:
 			self.show()
+
+
+
+func has_part_attached() -> bool:
+	for child in get_children():
+		if child is PartObject:
+			return true
+	return false
+
+func remove_attached_part() -> void:
+	for child in get_children():
+		if child is PartObject:
+			child.queue_free()
+
+
+func hide_texture() -> void:
+	texture_rect.hide()
+
+func show_texture() -> void:
+	texture_rect.show()
 
 
 func _on_mouse_entered() -> void:

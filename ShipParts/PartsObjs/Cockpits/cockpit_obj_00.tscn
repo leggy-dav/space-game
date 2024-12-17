@@ -28,3 +28,4 @@ polygon = PackedVector2Array(0, 0, -5, 0, -5, -8, -4, -9, -4, -14, -1, -17, 1, -
 [node name="AnchorBase" parent="." instance=ExtResource("3_o82b1")]
 
 [node name="AP_00" parent="AnchorBase" instance=ExtResource("4_t3rh8")]
+position = Vector2(0, -2)
