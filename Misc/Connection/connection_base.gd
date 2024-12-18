@@ -8,9 +8,17 @@ class_name ConnectionBase
 func _ready() -> void:
 	for child in get_children():
 		if child is ConnectionPoint:
-			print('Added Connection Point : ', child.name)
 			connection_points.append(child)
 	pass # Replace with function body.
+
+
+func get_connection_point_by_name(name: String) -> ConnectionPoint:
+	for cp in connection_points:
+		if cp.name == name:
+			return cp
+	
+	print('Cannot Find Connection Point "', name, '"')
+	return null
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.

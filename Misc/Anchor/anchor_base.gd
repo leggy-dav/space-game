@@ -10,7 +10,6 @@ var anchor_index: int = 0
 func _ready() -> void:
 	for child in get_children():
 		if child is AnchorPoint:
-			print('Added Anchor Points : ', child.name)
 			anchor_points.append(child)
 	pass # Replace with function body.
 

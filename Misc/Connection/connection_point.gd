@@ -14,7 +14,7 @@ class_name ConnectionPoint
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var texture_rect: TextureRect = $TextureRect
 
-#var active: bool = true
+var active: bool = true
 
 signal connection_point_mouse_entered(Area2D)
 signal connection_point_mouse_exited()
@@ -85,14 +85,27 @@ func hide_texture() -> void:
 func show_texture() -> void:
 	texture_rect.show()
 
+func deactivate() -> void:
+	active = false
+
+func activate() -> void:
+	active = true
+
+func strip_point() -> void:
+	texture_rect.queue_free()
+	collision_shape_2d.PHYSICS_INTERPOLATION_MODE_OFF
+	collision_shape_2d.hide()
+
 
 func _on_mouse_entered() -> void:
-	print("Mouse Entered : ", self.name)
-	connection_point_mouse_entered.emit(self)
+	if active:
+		print("Mouse Entered : ", self.name)
+		connection_point_mouse_entered.emit(self)
 	pass # Replace with function body.
 
 
 func _on_mouse_exited() -> void:
-	print("Mouse Exited : ", self.name)
-	connection_point_mouse_exited.emit()
+	if active:
+		print("Mouse Exited : ", self.name)
+		connection_point_mouse_exited.emit()
 	pass # Replace with function body.

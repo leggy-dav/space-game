@@ -23,6 +23,10 @@ window/stretch/aspect="ignore"
 
 project/assembly_name="Space_Game_0.1"
 
+[global_group]
+
+Persistent="Objects whos info can be saved."
+
 [input]
 
 click_left={

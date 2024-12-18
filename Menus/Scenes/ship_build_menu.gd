@@ -8,18 +8,23 @@ var scrole_scalable: bool = false
 var mouse_position: Vector2 = Vector2.ZERO
 var mouse_offset: Vector2 = Vector2.ZERO
 var grabbed_part: PartObject = null
+var grabbed_part_data: PartData = null
 var snap_point: ConnectionPoint = null
 
 var parts_selection_menu: PartsSelectControl
 
 # Header Bar Objects
-@onready var cost_label: Label = $MenuHeader/MarginContainer/HBoxContainer/CostLabel
+@onready var cost_label: Label = $MenuHeader/MarginContainer/HBoxContainer/VBoxContainer/CostLabel
+@onready var funds_label: Label = $MenuHeader/MarginContainer/HBoxContainer/VBoxContainer/FundsLabel
 @onready var ship_name_line_edit: LineEdit = $MenuHeader/MarginContainer/HBoxContainer/ShipNameLineEdit
+
+var cost_amount: float = 0.0
 
 # Main Anchor Point
 @onready var ship_anchor_point: ConnectionPoint = $BuildArea/ShipAnchorPoint
 @onready var build_area: Control = $BuildArea
 
+const SHIP_BUILD_MANAGER = preload("res://ShipBuilder/ship_build_manager.tres")
 
 # signals
 #signal clear_held_part()
@@ -28,6 +33,9 @@ var parts_selection_menu: PartsSelectControl
 func _ready() -> void:
 	setup_parts_selection_menu($PartsSelection00)
 	ship_anchor_point.scale = Vector2.ONE * base_anchor_scale
+	var ship_data = SHIP_BUILD_MANAGER.get_ship_save()
+	if ship_data:
+		build_saved_ship(ship_data)
 	pass
 
 
@@ -103,6 +111,8 @@ func _input(event: InputEvent) -> void:
 
 func _on_exit_button_pressed() -> void:
 	# Exit shit build menu
+	# TODO : fix up exit so it's more of a BACk button
+	get_tree().change_scene_to_file("res://Scenes/MainMenu/main_menu.tscn")
 	pass # Replace with function body.
 
 
@@ -121,8 +131,15 @@ func _on_clear_button_pressed() -> void:
 	ship_anchor_point.remove_attached_part()
 	ship_anchor_point.show_texture()
 	ship_anchor_point.scale = Vector2.ONE * base_anchor_scale
+	cost_amount = 0.0
+	update_cost_label()
 	pass # Replace with function body.
 
+func update_cost_label() -> void:
+	if cost_amount > 0:
+		cost_label.text = "-$%.2f" % cost_amount
+	else:
+		cost_label.text = "$000.00"
 
 ##############################################################################
 #  ██████   █████  ██████  ████████ ███████     ███    ███ ███    ██    
@@ -145,6 +162,8 @@ func on_part_selected(part_data: PartData):
 		new_part.position = Vector2.ZERO
 		ship_anchor_point.hide_texture()
 		connect_connection_points(new_part)
+		cost_amount = part_data.cost
+		update_cost_label()
 		return
 	
 	elif not grabbed_part:
@@ -173,6 +192,7 @@ func _on_build_area_mouse_exited() -> void:
 
 
 func set_grabbed_part(part_data: PartData) -> void:
+	grabbed_part_data = part_data
 	grabbed_part = part_data.packed_scene.instantiate()
 	grabbed_part.scale = Vector2.ONE * curr_scale
 	add_child(grabbed_part)
@@ -209,6 +229,7 @@ func remove_grabbed_part() -> void:
 		mouse_offset = Vector2.ZERO
 		grabbed_part.queue_free()
 		grabbed_part = null
+		grabbed_part_data = null
 
 
 func set_snap_point(point: ConnectionPoint) -> void:
@@ -223,6 +244,8 @@ func clear_snap_point() -> void:
 func place_part() -> void:
 	if grabbed_part:
 		if snap_point:
+			cost_amount += grabbed_part_data.cost
+			update_cost_label()
 			grabbed_part.show_connection_base()
 			connect_connection_points(grabbed_part)
 			grabbed_part.reparent(snap_point)
@@ -231,6 +254,7 @@ func place_part() -> void:
 			snap_point.hide_texture()
 			snap_point = null
 			grabbed_part = null
+			grabbed_part_data = null
 
 
 func flip_grabbed_x() -> void:
@@ -275,33 +299,15 @@ func set_next_anchor_point() -> void:
 #  ███████ ██   ██   ████   ███████ ██     ███████  ██████  ██   ██ ██████  
 ################################################################################
 
-func save_ship():
-	var ship_dict = {}
+func save_ship() -> void:
 	if ship_anchor_point.has_part_attached():
+		ship_anchor_point.scale = Vector2.ONE
 		for child in ship_anchor_point.get_children():
 			if child is PartObject:
-				ship_dict["date"] = Time.get_date_string_from_system()
-				ship_dict["name"] = ship_name_line_edit.text
-				ship_dict["parts"] = get_child_part_dict(child)
-	
-	print(ship_dict)
+				SHIP_BUILD_MANAGER.save_ship(child, ship_name_line_edit.text)
+		ship_anchor_point.scale = Vector2.ONE * curr_scale
 
-func get_child_part_dict(base: PartObject) -> Dictionary:
-	
-	var base_dict = {
-		"part_id": base.part_id,
-		"rotation": base.rotation_degrees,
-		"scale_x": base.scale.x,
-		"scale_y": base.scale.y,
-		"connection_points": {}
-	}
-	
-	if base.get_connection_base():
-		for point in base.get_connection_points():
-			for point_child in point.get_children():
-				if point_child is PartObject:
-					var point_dict = get_child_part_dict(point_child)
-					if point_dict:
-						base_dict["connection_points"][point.name] = point_dict
-						
-	return base_dict
+
+func build_saved_ship(ship_data: Dictionary) -> void:
+	print('TODO : Build Ship!')
+	pass

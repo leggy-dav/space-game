@@ -38,6 +38,9 @@ script = ExtResource("4_qx4xa")
 position = Vector2(8, 0)
 script = ExtResource("4_qx4xa")
 
+[node name="AnchorPoint3" type="Node2D" parent="AnchorBase"]
+script = ExtResource("4_qx4xa")
+
 [node name="ConnectionBase" type="Node2D" parent="."]
 visible = false
 position = Vector2(-8, 0)
