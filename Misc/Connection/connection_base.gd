@@ -6,9 +6,7 @@ class_name ConnectionBase
 
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for child in get_children():
-		if child is ConnectionPoint:
-			connection_points.append(child)
+	get_connection_points()
 	pass # Replace with function body.
 
 
@@ -19,6 +17,14 @@ func get_connection_point_by_name(name: String) -> ConnectionPoint:
 	
 	print('Cannot Find Connection Point "', name, '"')
 	return null
+
+
+func get_connection_points() -> void:
+	if connection_points.size() > 0:
+		connection_points.clear()
+	for child in get_children():
+		if child is ConnectionPoint:
+			connection_points.append(child)
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.

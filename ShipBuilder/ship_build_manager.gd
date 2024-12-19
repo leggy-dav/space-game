@@ -107,7 +107,6 @@ func build_ship(ship_data: Dictionary, anchor_point) -> void:
 			_place_display_part(anchor_point, part_obj, ship_parts)
 			
 			_add_display_child(ship_parts, part_obj, parts_list)
-			# TODO : add children
 
 
 func _place_display_part(anchor_point, part_obj: PartObject, parts_dict: Dictionary) -> void:
@@ -124,6 +123,10 @@ func _place_display_part(anchor_point, part_obj: PartObject, parts_dict: Diction
 			c_p.strip_point()
 			#c_p.hide_texture()
 			#c_p.deactivate()
+	
+	# we don't need anchors in game, remove em to reduce nodes in scene
+	part_obj.remove_anchor_base()
+	
 	pass
 
 
@@ -142,7 +145,20 @@ func _add_display_child(part_dict: Dictionary, partent_part: PartObject, parts_l
 				if new_part_obj is PartObject:
 					_place_display_part(c_p, new_part_obj, new_part_dict)
 					_add_display_child(new_part_dict, new_part_obj, parts_list)
-		
+	
+	# clear up connection base from unused connection points
+	# i hope this might improve game performance since we'll have
+	# fewer nodes maybe
+	for point in connection_base.connection_points:
+		if point is ConnectionPoint:
+			if not point.has_part_attached():
+				print('Freed Connection Point')
+				point.queue_free()
+			else:
+				point.deactivate()
+				# TODO : maybe remove signal & detection from connection point
+	
+	#connection_base.get_connection_points()
 	pass
 
 #######################################

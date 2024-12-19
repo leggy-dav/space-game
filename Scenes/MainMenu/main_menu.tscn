@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://di52013lcw5l1"]
+[gd_scene load_steps=6 format=3 uid="uid://di52013lcw5l1"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/main_menu.gd" id="1_4dhqh"]
 [ext_resource type="Texture2D" uid="uid://b7ijuxdbagyrm" path="res://Images/SpaceBackground_00.png" id="1_xluo7"]
 [ext_resource type="PackedScene" uid="uid://c4mq0md77sau4" path="res://Menus/Scenes/ship_build_menu_00.tscn" id="2_avv8s"]
 [ext_resource type="Texture2D" uid="uid://bbeg58k3u15p7" path="res://Images/SpaceGameText.png" id="2_l1mdo"]
+[ext_resource type="PackedScene" uid="uid://6646rqwhdydh" path="res://Scenes/Level-Asteroids/astroids_level_00.tscn" id="3_ul5wd"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_4dhqh")
 build_menu = ExtResource("2_avv8s")
+play_level = ExtResource("3_ul5wd")
 
 [node name="BackgroundTexture" type="TextureRect" parent="."]
 offset_right = 1920.0

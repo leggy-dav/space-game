@@ -2,6 +2,7 @@ extends Node2D
 
 #const SHIP_BUILD_MENU_00 = preload("res://Menus/Scenes/ship_build_menu_00.tscn")
 @export var build_menu: PackedScene
+@export var play_level: PackedScene
 
 @onready var ship_point: Node2D = $ShipPoint
 @onready var ship_anchor: Node2D = $ShipPoint/ShipAnchor
@@ -31,6 +32,8 @@ func _process(_delta: float) -> void:
 ###############################################################################
 
 func _on_fly_button_pressed() -> void:
+	if play_level:
+		get_tree().change_scene_to_file(play_level.resource_path)
 	pass # Replace with function body.
 
 

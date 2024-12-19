@@ -55,6 +55,23 @@ func remove_connections() -> void:
 			child.queue_free()
 			return
 
+#func remove_empty_connections() -> void:
+	### Remove Empty Connecctions
+	###
+	### Warning!!! This function should only be used after
+	### all connected parts have been created as children
+	### for a ship
+	#
+	#var connection_points = []
+	#for child in get_children():
+		#if child is ConnectionBase:
+			#connection_points += child.connection_points
+	#
+	#for point in connection_points:
+		#if point is ConnectionPoint:
+			#if point.has_part_attached():
+				#point.queue_free()
+
 
 ###############################################################################
 #   █████          ██     ██████  
@@ -84,6 +101,12 @@ func get_anchor_base() -> AnchorBase:
 			return child
 	return null
 
+
+func remove_anchor_base() -> void:
+	for child in get_children():
+		if child is AnchorBase:
+			child.queue_free()
+			return
 
 func remove_anchors() -> void:
 	for child in get_children():
