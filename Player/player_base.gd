@@ -56,6 +56,11 @@ func _input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseMotion:
 		ship_target_point = event.position
+	
+	if event is InputEventKey \
+			and event.keycode == KEY_ESCAPE \
+			and event.is_pressed():
+		get_tree().change_scene_to_file("res://Scenes/MainMenu/main_menu.tscn")
 
 ###############################################################################
 #  ███    ███  ██████  ██    ██ ███████ ███    ███ ███████ ███    ██ ████████ 
