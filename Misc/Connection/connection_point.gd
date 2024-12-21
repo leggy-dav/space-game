@@ -79,6 +79,13 @@ func remove_attached_part() -> void:
 			child.queue_free()
 
 
+func get_attached_part() -> PartObject:
+	for child in get_children():
+		if child is PartObject:
+			return child
+	return null
+	
+
 func hide_texture() -> void:
 	texture_rect.hide()
 
@@ -93,7 +100,6 @@ func activate() -> void:
 
 func strip_point() -> void:
 	texture_rect.queue_free()
-	collision_shape_2d.PHYSICS_INTERPOLATION_MODE_OFF
 	collision_shape_2d.hide()
 
 

@@ -14,6 +14,7 @@ size = Vector2(12, 8)
 
 [node name="EngineObj00" type="Area2D"]
 script = ExtResource("1_bdr54")
+power = 2.0
 part_id = "eng00"
 
 [node name="TextureRect" type="TextureRect" parent="."]

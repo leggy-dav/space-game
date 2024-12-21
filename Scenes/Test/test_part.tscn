@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciramtki68ew5"]
+
+[ext_resource type="Script" path="res://Scenes/Test/test_part.gd" id="1_tsyvk"]
+[ext_resource type="PackedScene" uid="uid://cbu2b8xo10r7n" path="res://ShipParts/PartsObjs/Weapons/weapon_obj_00.tscn" id="2_s8nca"]
+
+[node name="TestPart" type="Node2D"]
+script = ExtResource("1_tsyvk")
+
+[node name="WeaponObj00" parent="." instance=ExtResource("2_s8nca")]
+position = Vector2(587, 468)
+rotation = -2.18515
+scale = Vector2(3, 3)

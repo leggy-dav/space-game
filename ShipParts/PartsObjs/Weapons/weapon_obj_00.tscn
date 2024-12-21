@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbu2b8xo10r7n"]
+[gd_scene load_steps=8 format=3 uid="uid://cbu2b8xo10r7n"]
 
 [ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/weapon_part.gd" id="1_7ea30"]
 [ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_rfeo3"]
 [ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="3_c5fab"]
 [ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="4_s0f1r"]
+[ext_resource type="PackedScene" uid="uid://dfacyyd6soqi7" path="res://ShipParts/PartsObjs/WeaponScripts/WeaponBases/ballistic_cannon.tscn" id="5_ywqs7"]
+[ext_resource type="PackedScene" uid="uid://bs2sw46dqqabv" path="res://Projectiles/Bullets/ballistic_bullet.tscn" id="6_frg1b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvnx0"]
 atlas = ExtResource("2_rfeo3")
@@ -14,19 +16,27 @@ script = ExtResource("1_7ea30")
 part_id = "wp00"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -9.0
+offset_left = -7.0
 offset_top = -25.0
-offset_right = 7.0
+offset_right = 9.0
 offset_bottom = 7.0
 texture = SubResource("AtlasTexture_xvnx0")
 expand_mode = 1
 stretch_mode = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2, 0)
 polygon = PackedVector2Array(3, 5, -3, 5, -5, 2, -3, -18, 0, -18, 1, -8, 4, -5, 4, 2)
 
 [node name="AnchorBase" type="Node2D" parent="."]
 script = ExtResource("3_c5fab")
 
 [node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(3, 0)
 script = ExtResource("4_s0f1r")
+
+[node name="BallisticCannon" parent="." instance=ExtResource("5_ywqs7")]
+position = Vector2(0, -19)
+projectile_scene = ExtResource("6_frg1b")
+fire_rate = 0.25
+full_auto = true

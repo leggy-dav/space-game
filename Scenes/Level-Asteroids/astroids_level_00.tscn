@@ -27,3 +27,4 @@ motion_mode = 1
 up_direction = Vector2(0, 1)
 on_ready_build_ship = true
 rotation_speed = 20.0
+ship_scale = 1.25

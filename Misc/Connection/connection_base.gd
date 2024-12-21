@@ -10,9 +10,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func get_connection_point_by_name(name: String) -> ConnectionPoint:
+func get_connection_point_by_name(conn_name: String) -> ConnectionPoint:
 	for cp in connection_points:
-		if cp.name == name:
+		if cp.name == conn_name:
 			return cp
 	
 	print('Cannot Find Connection Point "', name, '"')

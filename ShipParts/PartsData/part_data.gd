@@ -18,6 +18,7 @@ enum PART_TYPES  {
 @export var cost: float = 0.0
 @export var part_type: PART_TYPES
 
+
 @export_category("Part References")
 @export var icon: Texture
 @export var packed_scene: PackedScene

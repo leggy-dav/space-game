@@ -152,7 +152,6 @@ func _add_display_child(part_dict: Dictionary, partent_part: PartObject, parts_l
 	for point in connection_base.connection_points:
 		if point is ConnectionPoint:
 			if not point.has_part_attached():
-				print('Freed Connection Point')
 				point.queue_free()
 			else:
 				point.deactivate()
@@ -194,7 +193,7 @@ func _get_dir_parts_data(dir_path: String) -> Array:
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
-		var path = dir_path + "/" + file_name
+		
 		if FileAccess.file_exists(dir_path + "/" + file_name):
 			var data_part = load(dir_path + "/" + file_name)
 			if data_part is PartData:
