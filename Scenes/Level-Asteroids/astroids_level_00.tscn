@@ -1,9 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://6646rqwhdydh"]
+[gd_scene load_steps=6 format=3 uid="uid://6646rqwhdydh"]
 
 [ext_resource type="Texture2D" uid="uid://b7ijuxdbagyrm" path="res://Images/SpaceBackground_00.png" id="1_5j0q8"]
+[ext_resource type="Script" path="res://Scenes/Level-Asteroids/astroids_level_00.gd" id="1_q6fwi"]
 [ext_resource type="PackedScene" uid="uid://clrv2wtcbb4c5" path="res://Player/player.tscn" id="2_3v14m"]
+[ext_resource type="PackedScene" uid="uid://ek3j0u15b881" path="res://SpaceObjects/Astroids/simple_asteroid.tscn" id="3_4fvab"]
+
+[sub_resource type="Curve2D" id="Curve2D_7tnik"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1152, 0, 0, 0, 0, 0, 1152, 648, 0, 0, 0, 0, 0, 648, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [node name="Astroids_Level_00" type="Node2D"]
+script = ExtResource("1_q6fwi")
+astroid_scene = ExtResource("3_4fvab")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -28,3 +38,39 @@ up_direction = Vector2(0, 1)
 on_ready_build_ship = true
 rotation_speed = 20.0
 ship_scale = 1.25
+
+[node name="AstroidPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_7tnik")
+
+[node name="AstroidSpawnLocation" type="PathFollow2D" parent="AstroidPath"]
+
+[node name="AsteroidSpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FundsPanel" type="Panel" parent="UserInterface"]
+layout_mode = 0
+offset_left = 993.0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 41.0
+
+[node name="FundsLabel" type="Label" parent="UserInterface/FundsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "$000.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="AsteroidSpawnTimer" to="." method="_on_astroid_spawn_timer_timeout"]

@@ -24,7 +24,7 @@ var cost_amount: float = 0.0
 @onready var ship_anchor_point: ConnectionPoint = $BuildArea/ShipAnchorPoint
 @onready var build_area: Control = $BuildArea
 
-const SHIP_BUILD_MANAGER = preload("res://ShipBuilder/ship_build_manager.tres")
+const SHIP_BUILD_MANAGER = preload("res://Managers/ShipBuilder/ship_build_manager.tres")
 
 # signals
 #signal clear_held_part()
@@ -36,6 +36,12 @@ func _ready() -> void:
 	var ship_data = SHIP_BUILD_MANAGER.get_ship_save()
 	if ship_data:
 		build_saved_ship(ship_data)
+	else:
+		ship_data = SHIP_BUILD_MANAGER.get_ship_save("res://Managers/ShipBuilder/starter-ship-save.json")
+		if ship_data:
+			print('Default Ship Loaded')
+			build_saved_ship(ship_data)
+	
 	pass
 
 

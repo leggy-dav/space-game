@@ -18,7 +18,7 @@ var weapons_list: Array[WeaponPart]
 var shields_list: Array[ShieldPart]
 
 
-const SHIP_BUILD_MANAGER = preload("res://ShipBuilder/ship_build_manager.tres")
+const SHIP_BUILD_MANAGER = preload("res://Managers/ShipBuilder/ship_build_manager.tres")
 
 var ship_target_point: Vector2 = Vector2.ZERO
 var radian_offset: float = (PI / 2) # this allows for the ship to point "up" when rotating

@@ -7,7 +7,7 @@ extends Node2D
 @onready var ship_point: Node2D = $ShipPoint
 @onready var ship_anchor: Node2D = $ShipPoint/ShipAnchor
 
-const SHIP_BUILD_MANAGER = preload("res://ShipBuilder/ship_build_manager.tres")
+const SHIP_BUILD_MANAGER = preload("res://Managers/ShipBuilder/ship_build_manager.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -59,9 +59,9 @@ func _on_quit_button_pressed() -> void:
 #  ███████ ██   ██ ██ ██          ███████  ██████  ██   ██ ██████  
 ###############################################################################
 
-func display_ship(ship_parts: Dictionary) -> void:
-
-	#for key in ship_parts:
-		#print(key, " : ", ship_parts[key])
-	
-	pass
+#func display_ship(ship_parts: Dictionary) -> void:
+#
+	##for key in ship_parts:
+		##print(key, " : ", ship_parts[key])
+	#
+	#pass

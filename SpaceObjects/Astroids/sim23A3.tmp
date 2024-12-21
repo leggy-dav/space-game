@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ek3j0u15b881"]
+
+[ext_resource type="Script" path="res://SpaceObjects/Astroids/simple_asteroid.gd" id="1_u2j8k"]
+[ext_resource type="Texture2D" uid="uid://b57jblbaesiq2" path="res://Images/Asteroids/64x64 Rock - A1_00003.png" id="2_rmdmo"]
+
+[node name="SimpleAsteroid" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+script = ExtResource("1_u2j8k")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2, -22, 5, -24, 11, -24, 18, -19, 21, -12, 21, -2, 20, 1, 18, 9, 18, 16, 15, 23, 0, 23, -9, 20, -16, 13, -21, 0, -22, -5, -22, -7, -21, -9, -16, -14, -11, -17, -9, -24, -7, -24)
+
+[node name="Hitbox_Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Hitbox_CPPD" type="CollisionPolygon2D" parent="Hitbox_Area2D"]
+polygon = PackedVector2Array(20, 1, 18, 9, 18, 16, 15, 23, 0, 23, -9, 20, -16, 13, -21, 0, -22, -5, -22, -7, -21, -9, -16, -14, -11, -17, -9, -24, -7, -24, -2, -22, 5, -24, 11, -24, 18, -19, 21, -12, 21, -2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rmdmo")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="Hitbox_Area2D" to="." method="_on_hitbox_area_2d_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

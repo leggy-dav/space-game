@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PlayerManager" load_steps=2 format=3 uid="uid://cs2y6qmmyqor1"]
+
+[ext_resource type="Script" path="res://Managers/Player/player_manager.gd" id="1_7i5jn"]
+
+[resource]
+script = ExtResource("1_7i5jn")
+money = 1200.0

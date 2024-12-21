@@ -57,12 +57,15 @@ func _get_child_part_dict(base: PartObject) -> Dictionary:
 #  ███████  ██████  ██   ██ ██████  
 ###############################################################################
 
-func get_ship_save() -> Dictionary:
+func get_ship_save(file_path: String = "") -> Dictionary:
 	
-	if not FileAccess.file_exists(SAVE_SHIP_PATH):
+	if not file_path:
+		file_path = SAVE_SHIP_PATH
+	
+	if not FileAccess.file_exists(file_path):
 		return {}
 	
-	var save_file = FileAccess.open(SAVE_SHIP_PATH, FileAccess.READ)
+	var save_file = FileAccess.open(file_path, FileAccess.READ)
 	var json_string = ""
 	while save_file.get_position() < save_file.get_length():
 		json_string += save_file.get_line()
@@ -75,6 +78,7 @@ func get_ship_save() -> Dictionary:
 		return {}
 	print('LOADED')
 	return json.data
+
 
 
 ###############################################################################

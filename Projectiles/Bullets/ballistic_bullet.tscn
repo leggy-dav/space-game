@@ -10,6 +10,8 @@ size = Vector2(2, 6)
 size = Vector2(2, 6)
 
 [node name="BallisticBullet" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 2
 gravity_scale = 0.0
 script = ExtResource("1_5k2os")
 
@@ -33,13 +35,17 @@ stretch_mode = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1hwf0")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox_Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox_Area2D"]
 shape = SubResource("RectangleShape2D_tp71s")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 
+[connection signal="area_entered" from="Hitbox_Area2D" to="." method="_on_hitbox_area_2d_area_entered"]
+[connection signal="body_entered" from="Hitbox_Area2D" to="." method="_on_hitbox_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
