@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://br1ka14m70sn2"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_fbcrw"]
+[ext_resource type="PackedScene" uid="uid://b1wi7l6uf25su" path="res://ShipParts/PartsObjs/Utilities/util_obj_12.tscn" id="2_a1cdl"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="2_rg0uo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80wdi"]
+atlas = ExtResource("1_fbcrw")
+region = Rect2(144, 160, 16, 16)
+
+[resource]
+script = ExtResource("2_rg0uo")
+part_id = "ut12"
+name = "Winglet N1"
+description = ""
+cost = 0.0
+part_type = 3
+icon = SubResource("AtlasTexture_80wdi")
+packed_scene = ExtResource("2_a1cdl")

@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://28q3cebi4vug"]
+
+[ext_resource type="Script" path="res://Menus/Scenes/parts_selection.gd" id="1_856u4"]
+[ext_resource type="Resource" uid="uid://bm4gj8jdtfs51" path="res://Menus/TestMenu/cockpit_selection.tres" id="2_1grpv"]
+[ext_resource type="Resource" uid="uid://bxmvfbhgu80nn" path="res://Menus/TestMenu/hull_selection.tres" id="2_jbr7j"]
+[ext_resource type="Resource" uid="uid://bc5ekl4grv7g2" path="res://Menus/TestMenu/engine_selection.tres" id="3_calix"]
+
+[node name="PartsSelection00" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_856u4")
+ship_part_cockpits = ExtResource("2_1grpv")
+ship_part_hulls = ExtResource("2_jbr7j")
+ship_part_engines = ExtResource("3_calix")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HullsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hulls"
+
+[node name="CockpitsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Cockpits"
+
+[node name="EnginesButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Engines"
+
+[node name="UtilitiesButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Utilities"
+
+[node name="WeaponsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Weapons"
+
+[node name="ShieldsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Shields"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1.0
+offset_right = 300.0
+offset_bottom = 501.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 480)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 8
+columns = 2
+
+[connection signal="pressed" from="VBoxContainer/HullsButton" to="." method="_on_hulls_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CockpitsButton" to="." method="_on_cockpits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/EnginesButton" to="." method="_on_engines_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/UtilitiesButton" to="." method="_on_utilities_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/WeaponsButton" to="." method="_on_weapons_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ShieldsButton" to="." method="_on_shields_button_pressed"]

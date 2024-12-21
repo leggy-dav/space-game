@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://v2hi1d8qrm2p"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_mfdi3"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_ypfeh"]
+[ext_resource type="PackedScene" uid="uid://4htv3h1krise" path="res://ShipParts/PartsObjs/Weapons/weapon_obj_03.tscn" id="2_hr02y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cplum"]
+atlas = ExtResource("1_mfdi3")
+region = Rect2(0, 112, 16, 32)
+
+[resource]
+script = ExtResource("1_ypfeh")
+part_id = "wp03"
+name = "Plasmodius"
+description = "Alien plasma blaster which fires heat seeking plasma missles."
+cost = 20000.0
+part_type = 4
+icon = SubResource("AtlasTexture_cplum")
+packed_scene = ExtResource("2_hr02y")

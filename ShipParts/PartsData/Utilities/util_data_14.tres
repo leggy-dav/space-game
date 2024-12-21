@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://b8v6go7lrd64y"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_ql7jw"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="2_fu7c4"]
+[ext_resource type="PackedScene" uid="uid://nn1t4hkjtsv4" path="res://ShipParts/PartsObjs/Utilities/util_obj_14.tscn" id="2_vrp5l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80wdi"]
+atlas = ExtResource("1_ql7jw")
+region = Rect2(96, 80, 16, 32)
+
+[resource]
+script = ExtResource("2_fu7c4")
+part_id = "ut14"
+name = "Fitting P2"
+description = ""
+cost = 0.0
+part_type = 3
+icon = SubResource("AtlasTexture_80wdi")
+packed_scene = ExtResource("2_vrp5l")

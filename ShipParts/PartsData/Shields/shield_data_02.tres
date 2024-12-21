@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://dfoxt88ujtx36"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_fdk67"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_ihd70"]
+[ext_resource type="PackedScene" uid="uid://c6yq5njmk223v" path="res://ShipParts/PartsObjs/Shields/shield_obj_02.tscn" id="2_n887q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vpht"]
+atlas = ExtResource("1_ihd70")
+region = Rect2(240, 96, 16, 16)
+
+[resource]
+script = ExtResource("1_fdk67")
+part_id = "sh02"
+name = "Mag Gen Mk6"
+description = "Magnetic generator creates a powerful magnetic field repelling balistic projectiles, some missles, astroids, and floating debre."
+cost = 1000.0
+part_type = 5
+icon = SubResource("AtlasTexture_5vpht")
+packed_scene = ExtResource("2_n887q")

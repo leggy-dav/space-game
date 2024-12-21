@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfacyyd6soqi7"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/WeaponScripts/ballistic_cannon.gd" id="1_8j8xw"]
+
+[node name="BallisticCannon" type="Node2D"]
+script = ExtResource("1_8j8xw")
+
+[node name="TimerTimeOut" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="TimerTimeOut" to="." method="_on_timer_time_out_timeout"]

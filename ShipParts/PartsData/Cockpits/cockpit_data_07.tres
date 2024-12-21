@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://ctudayw2umxko"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_25otp"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_pxjht"]
+[ext_resource type="PackedScene" uid="uid://nb7ll6kttw4l" path="res://ShipParts/PartsObjs/Cockpits/cockpit_obj_07.tscn" id="2_tubsh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yor1g"]
+atlas = ExtResource("1_25otp")
+region = Rect2(16, 32, 16, 32)
+
+[resource]
+script = ExtResource("1_pxjht")
+part_id = "cp07"
+name = "Alien Control 01"
+description = ""
+cost = 6200.0
+part_type = 0
+icon = SubResource("AtlasTexture_yor1g")
+packed_scene = ExtResource("2_tubsh")

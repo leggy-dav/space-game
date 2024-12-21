@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://bs7jfqaxi88rw"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/utility_part.gd" id="1_gx77c"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_galct"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="3_be2ka"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="4_c8gn2"]
+[ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="4_mnsav"]
+[ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="6_wsfom"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uka7t"]
+atlas = ExtResource("2_galct")
+region = Rect2(128, 80, 32, 32)
+
+[node name="UtilObj15" type="Area2D"]
+script = ExtResource("1_gx77c")
+part_id = "ut15"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_uka7t")
+expand_mode = 1
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(7, 6, 7, 16, 2, 16, -11, 2, -11, -7, -9, -7, -6, -4, -3, -4)
+metadata/_edit_lock_ = true
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("3_be2ka")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(5, 10)
+script = ExtResource("4_c8gn2")
+
+[node name="ConnectionBase" type="Node2D" parent="."]
+script = ExtResource("4_mnsav")
+
+[node name="CP_00" parent="ConnectionBase" instance=ExtResource("6_wsfom")]
+position = Vector2(-11, -2)
+exclude_cockpit = true
+exclude_engine = true
+exclude_shield = true
+
+[node name="CP_01" parent="ConnectionBase" instance=ExtResource("6_wsfom")]
+position = Vector2(-4, 4)
+exclude_cockpit = true
+exclude_engine = true
+exclude_utility = true
+
+[node name="CP_02" parent="ConnectionBase" instance=ExtResource("6_wsfom")]
+position = Vector2(-5, -4)
+exclude_cockpit = true
+exclude_engine = true
+exclude_shield = true
+exclude_weapon = true

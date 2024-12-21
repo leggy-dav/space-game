@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://f4p2f37e1kxy"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_ks3mn"]
+[ext_resource type="PackedScene" uid="uid://davj35bilonbp" path="res://ShipParts/PartsObjs/Utilities/util_obj_08.tscn" id="2_7s6v5"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="2_mlkmp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80wdi"]
+atlas = ExtResource("1_ks3mn")
+region = Rect2(160, 112, 16, 32)
+
+[resource]
+script = ExtResource("2_mlkmp")
+part_id = "ut08"
+name = "Wing M 24"
+description = ""
+cost = 0.0
+part_type = 3
+icon = SubResource("AtlasTexture_80wdi")
+packed_scene = ExtResource("2_7s6v5")

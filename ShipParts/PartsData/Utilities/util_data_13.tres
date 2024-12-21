@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://cuw5h18h1q2qf"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_gtxpm"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="2_3j882"]
+[ext_resource type="PackedScene" uid="uid://p3kuuumvtgsr" path="res://ShipParts/PartsObjs/Utilities/util_obj_13.tscn" id="2_l821p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80wdi"]
+atlas = ExtResource("1_gtxpm")
+region = Rect2(176, 144, 32, 32)
+
+[resource]
+script = ExtResource("2_3j882")
+part_id = "ut13"
+name = ""
+description = ""
+cost = 0.0
+part_type = 3
+icon = SubResource("AtlasTexture_80wdi")
+packed_scene = ExtResource("2_l821p")

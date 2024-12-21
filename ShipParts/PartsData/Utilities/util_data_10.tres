@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://b04idqruyv42d"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_t2qse"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="2_0gfte"]
+[ext_resource type="PackedScene" uid="uid://db4e6rqgehsna" path="res://ShipParts/PartsObjs/Utilities/util_obj_10.tscn" id="2_t6463"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80wdi"]
+atlas = ExtResource("1_t2qse")
+region = Rect2(192, 112, 16, 32)
+
+[resource]
+script = ExtResource("2_0gfte")
+part_id = "ut10"
+name = "Omni Wing O"
+description = ""
+cost = 0.0
+part_type = 3
+icon = SubResource("AtlasTexture_80wdi")
+packed_scene = ExtResource("2_t6463")

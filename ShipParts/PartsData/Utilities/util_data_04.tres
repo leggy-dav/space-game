@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://bjfux6v0xvp5x"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_gu5lt"]
+[ext_resource type="PackedScene" uid="uid://c6e5mgskncvu4" path="res://ShipParts/PartsObjs/Utilities/util_obj_04.tscn" id="2_8m2h2"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="2_q4el4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80wdi"]
+atlas = ExtResource("1_gu5lt")
+region = Rect2(160, 64, 16, 16)
+
+[resource]
+script = ExtResource("2_q4el4")
+part_id = "ut04"
+name = "Joint XS 1"
+description = ""
+cost = 0.0
+part_type = 3
+icon = SubResource("AtlasTexture_80wdi")
+packed_scene = ExtResource("2_8m2h2")

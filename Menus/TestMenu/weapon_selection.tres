@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ShipPartList" load_steps=7 format=3 uid="uid://cy1h2oywk4qn"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_ba3o7"]
+[ext_resource type="Script" path="res://Menus/ship_part_list.gd" id="2_neicx"]
+[ext_resource type="Resource" uid="uid://cntud8pnndk70" path="res://ShipParts/PartsData/Weapons/weapon_data_00.tres" id="2_xdbd8"]
+[ext_resource type="Resource" uid="uid://qyhwcyt6hoj2" path="res://ShipParts/PartsData/Weapons/weapon_data_01.tres" id="3_yxphh"]
+[ext_resource type="Resource" uid="uid://c6yf7th6y820t" path="res://ShipParts/PartsData/Weapons/weapon_data_02.tres" id="4_4l84t"]
+[ext_resource type="Resource" uid="uid://v2hi1d8qrm2p" path="res://ShipParts/PartsData/Weapons/weapon_data_03.tres" id="5_kupen"]
+
+[resource]
+script = ExtResource("2_neicx")
+part_slots = Array[ExtResource("1_ba3o7")]([ExtResource("2_xdbd8"), ExtResource("3_yxphh"), ExtResource("4_4l84t"), ExtResource("5_kupen")])

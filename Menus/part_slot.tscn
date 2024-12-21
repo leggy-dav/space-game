@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1gv0347memal"]
+
+[ext_resource type="Script" path="res://Menus/part_slot.gd" id="1_avq60"]
+[ext_resource type="Texture2D" uid="uid://d3cpqf6gq1vio" path="res://icon.svg" id="2_k4du0"]
+
+[node name="PartSlot" type="PanelContainer"]
+custom_minimum_size = Vector2(80, 80)
+script = ExtResource("1_avq60")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_k4du0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.54902)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 10
+text = "Name"
+autowrap_mode = 2
+
+[node name="CostLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "Cost"
+horizontal_alignment = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

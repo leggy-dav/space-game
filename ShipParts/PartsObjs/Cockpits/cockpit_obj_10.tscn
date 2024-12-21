@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4ta4cvmbhvj6"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/cockpit_part.gd" id="1_6t17e"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_h854g"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="3_g56wt"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="4_t5ywq"]
+[ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="5_0abc7"]
+[ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="6_vhq74"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri33b"]
+atlas = ExtResource("2_h854g")
+region = Rect2(64, 32, 16, 32)
+
+[node name="CockpitObj10" type="Area2D"]
+script = ExtResource("1_6t17e")
+part_id = "cp10"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -8.0
+offset_top = -28.0
+offset_right = 8.0
+offset_bottom = 4.0
+texture = SubResource("AtlasTexture_ri33b")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, -5, 0, -5, -19, -3, -21, 3, -21, 5, -19, 5, 0)
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("3_g56wt")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, -2)
+script = ExtResource("4_t5ywq")
+
+[node name="AnchorPoint2" type="Node2D" parent="AnchorBase"]
+position = Vector2(-4, -3)
+script = ExtResource("4_t5ywq")
+
+[node name="AnchorPoint3" type="Node2D" parent="AnchorBase"]
+position = Vector2(4, -3)
+script = ExtResource("4_t5ywq")
+
+[node name="ConnectionBase" type="Node2D" parent="."]
+script = ExtResource("5_0abc7")
+
+[node name="CP_00" parent="ConnectionBase" instance=ExtResource("6_vhq74")]
+
+[node name="CP_01" parent="ConnectionBase" instance=ExtResource("6_vhq74")]
+position = Vector2(-5, -3)
+
+[node name="CP_02" parent="ConnectionBase" instance=ExtResource("6_vhq74")]
+position = Vector2(5, -3)

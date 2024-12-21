@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://cntud8pnndk70"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_fabon"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_p1pr0"]
+[ext_resource type="PackedScene" uid="uid://cbu2b8xo10r7n" path="res://ShipParts/PartsObjs/Weapons/weapon_obj_00.tscn" id="2_d0e6w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn2qj"]
+atlas = ExtResource("1_p1pr0")
+region = Rect2(16, 112, 16, 32)
+
+[resource]
+script = ExtResource("1_fabon")
+part_id = "wp00"
+name = "Auto Cannon"
+description = "A cannon which propels ballistic projectiles at a high rate of fire."
+cost = 800.0
+part_type = 4
+icon = SubResource("AtlasTexture_jn2qj")
+packed_scene = ExtResource("2_d0e6w")

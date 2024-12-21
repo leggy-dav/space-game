@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="ShipBuildManager" load_steps=2 format=3 uid="uid://cnkqxlv36gnah"]
+
+[ext_resource type="Script" path="res://ShipBuilder/ship_build_manager.gd" id="1_wiqt8"]
+
+[resource]
+script = ExtResource("1_wiqt8")

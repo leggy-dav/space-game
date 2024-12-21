@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6yq5njmk223v"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/shield_part.gd" id="1_7vcry"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_tvqag"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="3_upaqk"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="4_ue0br"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntwev"]
+atlas = ExtResource("2_tvqag")
+region = Rect2(240, 96, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l446a"]
+radius = 6.0
+
+[node name="ShieldObj02" type="Area2D"]
+script = ExtResource("1_7vcry")
+part_id = "sh02"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ntwev")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l446a")
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("3_upaqk")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+script = ExtResource("4_ue0br")

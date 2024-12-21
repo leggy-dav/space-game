@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://jk5yundx6u8x"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_vyovy"]
+[ext_resource type="PackedScene" uid="uid://5ac7n06f1dtk" path="res://ShipParts/PartsObjs/Utilities/util_obj_07.tscn" id="2_a04sx"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="2_xyspe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80wdi"]
+atlas = ExtResource("1_vyovy")
+region = Rect2(96, 112, 16, 32)
+
+[resource]
+script = ExtResource("2_xyspe")
+part_id = "ut07"
+name = "Taper Fitting S100"
+description = ""
+cost = 0.0
+part_type = 3
+icon = SubResource("AtlasTexture_80wdi")
+packed_scene = ExtResource("2_a04sx")

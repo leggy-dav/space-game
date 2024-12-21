@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://bbbmkdp4simhl"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_amia8"]
+[ext_resource type="PackedScene" uid="uid://c2f3wu3kseeae" path="res://ShipParts/PartsObjs/Utilities/util_obj_01.tscn" id="2_gt6wm"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="2_ujdxj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80wdi"]
+atlas = ExtResource("1_amia8")
+region = Rect2(112, 64, 16, 16)
+
+[resource]
+script = ExtResource("2_ujdxj")
+part_id = "ut01"
+name = "Joint M1"
+description = ""
+cost = 0.0
+part_type = 3
+icon = SubResource("AtlasTexture_80wdi")
+packed_scene = ExtResource("2_gt6wm")

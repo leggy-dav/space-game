@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwec41a3juekd"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/hull_part.gd" id="1_mew8y"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_tiiiw"]
+[ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="3_l38i8"]
+[ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="4_3sgwj"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="5_esytb"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="6_yjyle"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xow8g"]
+atlas = ExtResource("2_tiiiw")
+region = Rect2(272, 0, 32, 32)
+
+[node name="HullObj07" type="Area2D"]
+script = ExtResource("1_mew8y")
+part_id = "hl07"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_xow8g")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(4, 7, -4, 7, -4, 13, -10, 13, -10, -12, -8, -14, -5, -14, -3, -10, -3, -6, 3, -6, 3, -10, 5, -14, 8, -14, 10, -12, 10, 13, 4, 13)
+
+[node name="ConnectionBase" type="Node2D" parent="."]
+script = ExtResource("3_l38i8")
+
+[node name="CP_00" parent="ConnectionBase" instance=ExtResource("4_3sgwj")]
+position = Vector2(0, -6)
+exclude_engine = true
+exclude_weapon = true
+
+[node name="CP_01" parent="ConnectionBase" instance=ExtResource("4_3sgwj")]
+position = Vector2(-10, -6)
+exclude_cockpit = true
+exclude_engine = true
+
+[node name="CP_02" parent="ConnectionBase" instance=ExtResource("4_3sgwj")]
+position = Vector2(10, -6)
+exclude_cockpit = true
+exclude_engine = true
+
+[node name="CP_03" parent="ConnectionBase" instance=ExtResource("4_3sgwj")]
+position = Vector2(0, 7)
+exclude_cockpit = true
+exclude_weapon = true
+
+[node name="CP_04" parent="ConnectionBase" instance=ExtResource("4_3sgwj")]
+position = Vector2(-7, 13)
+exclude_cockpit = true
+exclude_weapon = true
+
+[node name="CP_05" parent="ConnectionBase" instance=ExtResource("4_3sgwj")]
+position = Vector2(7, 13)
+exclude_cockpit = true
+exclude_weapon = true
+
+[node name="CP_06" parent="ConnectionBase" instance=ExtResource("4_3sgwj")]
+position = Vector2(10, 7)
+exclude_cockpit = true
+exclude_engine = true
+
+[node name="CP_07" parent="ConnectionBase" instance=ExtResource("4_3sgwj")]
+position = Vector2(-10, 7)
+exclude_cockpit = true
+exclude_engine = true
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("5_esytb")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, -5)
+script = ExtResource("6_yjyle")
+
+[node name="AnchorPoint2" type="Node2D" parent="AnchorBase"]
+position = Vector2(7, -12)
+script = ExtResource("6_yjyle")
+
+[node name="AnchorPoint3" type="Node2D" parent="AnchorBase"]
+position = Vector2(9, 0)
+script = ExtResource("6_yjyle")
+
+[node name="AnchorPoint4" type="Node2D" parent="AnchorBase"]
+position = Vector2(7, 11)
+script = ExtResource("6_yjyle")
+
+[node name="AnchorPoint5" type="Node2D" parent="AnchorBase"]
+position = Vector2(0, 6)
+script = ExtResource("6_yjyle")
+
+[node name="AnchorPoint6" type="Node2D" parent="AnchorBase"]
+position = Vector2(-7, 11)
+script = ExtResource("6_yjyle")
+
+[node name="AnchorPoint7" type="Node2D" parent="AnchorBase"]
+position = Vector2(-9, 0)
+script = ExtResource("6_yjyle")
+
+[node name="AnchorPoint8" type="Node2D" parent="AnchorBase"]
+position = Vector2(-7, -12)
+script = ExtResource("6_yjyle")

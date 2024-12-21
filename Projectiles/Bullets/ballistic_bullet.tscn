@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs2sw46dqqabv"]
+
+[ext_resource type="Script" path="res://Projectiles/Bullets/ballistic_bullet.gd" id="1_5k2os"]
+[ext_resource type="Texture2D" uid="uid://diqy5eb82ane" path="res://Images/Bullet_02.png" id="1_ywrc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hwf0"]
+size = Vector2(2, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tp71s"]
+size = Vector2(2, 6)
+
+[node name="BallisticBullet" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_5k2os")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_ywrc1")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1hwf0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_tp71s")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

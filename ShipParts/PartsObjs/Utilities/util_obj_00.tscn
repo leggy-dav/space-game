@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwyigu5k6s6b"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/utility_part.gd" id="1_3l82y"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_bf7cm"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="3_o8220"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="4_6m07l"]
+[ext_resource type="Script" path="res://Misc/Connection/connection_base.gd" id="4_hqjat"]
+[ext_resource type="PackedScene" uid="uid://cwvwyl1t3m5oe" path="res://Misc/Connection/CP_00.tscn" id="6_1jb1w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uka7t"]
+atlas = ExtResource("2_bf7cm")
+region = Rect2(208, 32, 16, 16)
+
+[node name="UtilObj00" type="Area2D"]
+script = ExtResource("1_3l82y")
+part_id = "ut00"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -16.0
+offset_top = -7.0
+offset_bottom = 9.0
+texture = SubResource("AtlasTexture_uka7t")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 4, -5, 9, -13, 9, -13, 3, -4, -6, 0, -6)
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("3_o8220")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+script = ExtResource("4_6m07l")
+
+[node name="ConnectionBase" type="Node2D" parent="."]
+script = ExtResource("4_hqjat")
+
+[node name="CP_00" parent="ConnectionBase" instance=ExtResource("6_1jb1w")]
+position = Vector2(-8, 9)
+exclude_cockpit = true
+exclude_engine = true
+
+[node name="CP_01" parent="ConnectionBase" instance=ExtResource("6_1jb1w")]
+position = Vector2(-13, 6)
+exclude_cockpit = true
+exclude_engine = true

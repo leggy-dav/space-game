@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://dpaphnjfl3kon"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_4ruvw"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_phgql"]
+[ext_resource type="PackedScene" uid="uid://chy7foarpkwp7" path="res://ShipParts/PartsObjs/Engines/engine_obj_00.tscn" id="2_j1wo1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kchru"]
+atlas = ExtResource("1_phgql")
+region = Rect2(0, 80, 16, 16)
+
+[resource]
+script = ExtResource("1_4ruvw")
+part_id = "eng00"
+name = "Omni Thruster Gen3"
+description = ""
+cost = 1000.0
+part_type = 2
+icon = SubResource("AtlasTexture_kchru")
+packed_scene = ExtResource("2_j1wo1")

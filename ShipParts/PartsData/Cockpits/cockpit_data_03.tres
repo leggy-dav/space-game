@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PartData" load_steps=5 format=3 uid="uid://drsq7o0rojfdo"]
+
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="1_138ho"]
+[ext_resource type="Script" path="res://ShipParts/PartsData/part_data.gd" id="1_wrexk"]
+[ext_resource type="PackedScene" uid="uid://d2wgt1ajxo3g7" path="res://ShipParts/PartsObjs/Cockpits/cockpit_obj_03.tscn" id="2_skixc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32a2k"]
+atlas = ExtResource("1_138ho")
+region = Rect2(48, 0, 16, 32)
+
+[resource]
+script = ExtResource("1_wrexk")
+part_id = "cp03"
+name = "Omni Crewpit 03"
+description = ""
+cost = 900.0
+part_type = 0
+icon = SubResource("AtlasTexture_32a2k")
+packed_scene = ExtResource("2_skixc")

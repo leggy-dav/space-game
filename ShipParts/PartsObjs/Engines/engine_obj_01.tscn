@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dadg1jbvx562u"]
+
+[ext_resource type="Script" path="res://ShipParts/PartsObjs/PartsScripts/engine_part.gd" id="1_774fu"]
+[ext_resource type="Texture2D" uid="uid://puovjwqqkjl7" path="res://Images/ship_sprites_0001.tres" id="2_ybsgw"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_base.gd" id="3_p3v7l"]
+[ext_resource type="Script" path="res://Misc/Anchor/anchor_point.gd" id="4_a60xq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk2xt"]
+atlas = ExtResource("2_ybsgw")
+region = Rect2(16, 80, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uaxrt"]
+size = Vector2(12, 9)
+
+[node name="EngineObj01" type="Area2D"]
+script = ExtResource("1_774fu")
+power = 5.0
+part_id = "eng01"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -8.0
+offset_top = -3.0
+offset_right = 8.0
+offset_bottom = 13.0
+texture = SubResource("AtlasTexture_qk2xt")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_uaxrt")
+
+[node name="AnchorBase" type="Node2D" parent="."]
+script = ExtResource("3_p3v7l")
+
+[node name="AnchorPoint" type="Node2D" parent="AnchorBase"]
+script = ExtResource("4_a60xq")
