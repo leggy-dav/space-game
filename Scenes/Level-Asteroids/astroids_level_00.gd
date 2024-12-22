@@ -22,6 +22,7 @@ func _ready() -> void:
 	print("Start Funds : ", PLAYER_MANAGER.money)
 	
 	player_funds = PLAYER_MANAGER.get_funds()
+	update_funds_label()
 	pass # Replace with function body.
 	
 
